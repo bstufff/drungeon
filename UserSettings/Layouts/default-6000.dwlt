@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 536.8
+    y: 24
     width: 927.8
     height: 233.19998
   m_SerializedDataModeController:
@@ -524,7 +524,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 94bf0000
     m_LastClickedID: 49044
-    m_ExpandedIDs: 0000000094bf000000ca9a3b
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -632,8 +632,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1172.8
-    y: 79.200005
+    x: 1173.8
+    y: 24
     width: 362.19995
     height: 690.8
   m_SerializedDataModeController:
@@ -682,7 +682,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 79.200005
+    y: 24
     width: 289.4
     height: 431.6
   m_SerializedDataModeController:
@@ -747,8 +747,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 290.4
-    y: 79.200005
+    x: 291.4
+    y: 24
     width: 880.4
     height: 431.6
   m_SerializedDataModeController:
@@ -1377,7 +1377,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: -0.31005463, y: 0.04589396, z: 0.041425012}
     speed: 2
-    m_Value: {x: -0.22567362, y: -0.04719737, z: 0.038664963}
+    m_Value: {x: -0.31005463, y: 0.04589396, z: 0.041425012}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1407,7 +1407,7 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -1429,7 +1429,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 5.8575006
     speed: 2
-    m_Value: 6.133508
+    m_Value: 5.8575006
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1481,8 +1481,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Console\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 928.8
-    y: 536.8
+    x: 929.8
+    y: 24
     width: 242.00006
     height: 233.19998
   m_SerializedDataModeController:
