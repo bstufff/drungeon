@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa640988c014fa4eb18f65a85181509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DragonFlame: {fileID: 7868640222009488540}
+  dragonFlame: {fileID: 7868640222009488540}
 --- !u!1 &6812288688858638129
 GameObject:
   m_ObjectHideFlags: 0
