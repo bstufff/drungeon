@@ -15,6 +15,6 @@ public class PlayerMouseMouvement : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         // Appliquer la rotation du GameObject
-        transform.rotation = Quaternion.Euler(0, 0, angle);
+        transform.rotation = Quaternion.Euler(0, 0, angle - 90);
     }
 }
