@@ -553,8 +553,8 @@ TextureImporter:
       name: 360_F_491617054_eHmBsyIyGoyTWmAaGxyKhzzpAsh31tbL-removebg-preview_15
       rect:
         serializedVersion: 2
-        x: 72
-        y: 218
+        x: 31
+        y: 238
         width: 20
         height: 9
       alignment: 0
@@ -641,8 +641,8 @@ TextureImporter:
       name: 360_F_491617054_eHmBsyIyGoyTWmAaGxyKhzzpAsh31tbL-removebg-preview_19
       rect:
         serializedVersion: 2
-        x: 62
-        y: 212
+        x: 22
+        y: 197
         width: 10
         height: 10
       alignment: 0
@@ -751,9 +751,9 @@ TextureImporter:
       name: 360_F_491617054_eHmBsyIyGoyTWmAaGxyKhzzpAsh31tbL-removebg-preview_24
       rect:
         serializedVersion: 2
-        x: 93
+        x: 96
         y: 103
-        width: 118
+        width: 115
         height: 67
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerMouseMouvement : MonoBehaviour
 {
     bool started = false;
-    public void StartTheGame()
+    public void Select()
     {
         started = true;
     }

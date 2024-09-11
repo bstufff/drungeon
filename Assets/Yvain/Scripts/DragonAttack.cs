@@ -5,7 +5,7 @@ public class DragonAttack : MonoBehaviour
     public GameObject dragonFlame;
 
     bool started = false;
-    public void StartTheGame()
+    public void Select()
     {
         started = true;
     }
