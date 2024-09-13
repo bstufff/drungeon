@@ -598,7 +598,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -636,7 +636,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -4809,7 +4809,195 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_0: -6805939990277860329
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_1: -6414545605731986049
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_10: 2598144174789212970
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_100: -290864936182626360
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_101: 3010772427984621486
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_102: -1313953736902892773
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_103: 3999890313369067767
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_104: 167625942211206698
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_105: 8273679165574987842
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_106: -4540679307431033221
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_107: -395647356648221098
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_108: -5127741911169131360
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_109: -2111564052740081688
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_11: 6432394719858692129
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_110: 3329847367360660367
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_111: 6062184169625862077
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_112: -4538455990933902033
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_113: 2400984319044683197
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_114: -2294634720202149594
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_115: 4132797120609466958
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_116: -8485999519723197618
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_117: 7405361030164518973
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_118: -915503283623942841
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_119: -7664096546655250368
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_12: -5037458220085632385
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_120: -4605681908386221460
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_121: 5688665686812774685
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_122: -861882820173861570
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_123: -3560772788116922019
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_124: 6537704858769226034
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_125: 2774045377158187968
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_126: -4185578470359223592
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_127: 6511088884754337337
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_128: 3520394497474947006
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_129: -1617051762027923935
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_13: -8196744898278502402
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_130: 9009861515097301981
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_131: 9130448460890632032
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_132: 1247544205593563735
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_133: 4290118936437034977
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_134: -2404225234155274810
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_135: -3975616274649363494
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_136: 6007027689383448969
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_137: 6094581927030512588
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_138: 3815839174663879843
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_139: -2974428774717967712
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_14: 5736599067438368777
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_140: 2722162461452287056
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_141: 6521935458197398334
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_142: 1821387845246696578
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_143: 6235117632524758992
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_144: -5281242588681124314
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_145: -3798474581071832031
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_146: 2383056819787915784
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_147: 4189653930893395602
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_148: -7453218129442380436
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_149: 394316950579319072
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_15: -8801887864684149619
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_150: -1854690983856425461
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_151: -3497090321938823428
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_152: -7826146625467634138
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_153: -7495741383565167869
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_154: -3827084640626417277
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_155: 3783806180367406892
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_156: -3658773819332650563
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_157: -8950323850934083014
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_158: -6897866742681567726
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_159: 2256907178926057582
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_16: -877690124842079844
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_160: 855830688431598055
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_161: 3191066113240494701
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_162: 3728708842459444630
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_163: -4215895055927577236
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_164: 6222234756405967408
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_165: 4747852036562854893
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_166: -3835003638170257569
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_167: 9113119527193211585
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_168: -5779611563437464825
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_169: -6892555824954964421
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_17: 8723928380660672885
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_170: -616842519774954416
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_171: -8400638101844204633
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_172: 920073160841226711
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_173: -1412761044300527272
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_174: -2961958186400251338
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_175: 6614682643952443887
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_176: 1104669961826293066
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_177: 270486769944467849
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_178: -5377932979730030846
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_179: -2840482174012440550
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_18: 1417703769143065754
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_180: 3048755004223782871
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_181: 282964088792500994
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_182: -4199954274585398757
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_183: -354568536749652601
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_184: 1827948655878129919
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_185: -2767859907955464805
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_186: -4736999843770115149
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_187: -5287355333929173922
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_19: -5348925059309917465
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_2: -5123445389697755110
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_20: -9222421797390742982
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_21: 7973635741857968313
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_22: -7003693049038925238
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_23: -7988187596467904454
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_24: -5924288831997899558
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_25: -4319052507213780600
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_26: -8416353194124031823
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_27: -8056859254765201642
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_28: -4425838639784210030
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_29: 8314592004256323732
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_3: 766523409891399031
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_30: 2306479339017938967
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_31: 627514098616866592
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_32: -1835834943776145180
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_33: -1833169782889831136
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_34: -6077809090518561973
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_35: 1321352482469039900
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_36: -5786197398834457957
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_37: -5414005628318313569
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_38: -141730611812971878
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_39: 3347758580657715735
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_4: -4068378761063949106
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_40: 8318764601417624248
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_41: 8132750140417658820
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_42: 5399979762392431749
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_43: 668796729442793231
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_44: -8792430098606510477
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_45: 4159828991566123389
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_46: -4522919242683806156
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_47: -1714528068577770877
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_48: -1290235601800206830
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_49: 7070324447089375704
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_5: 3355610234326233479
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_50: -5408135142946579290
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_51: -7243419443059144481
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_52: -1951541971721605171
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_53: -6369491550527066885
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_54: -2559213505624784521
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_55: 7721892135368621967
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_56: 8539718665970492752
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_57: 7700664457670569299
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_58: 3704336603831257213
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_59: 7284167533218890983
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_6: -1656771076947519793
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_60: -5122092632014586855
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_61: 7341462163385421711
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_62: 6394427716273288781
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_63: -8018407258564908152
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_64: -6786826551333841985
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_65: -9140753441993034083
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_66: 7050805324886346580
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_67: 7945727283054733778
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_68: 4234779034733857719
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_69: -2027265841558050850
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_7: -8596952555765712950
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_70: -1175645391135109008
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_71: 8337899389531555514
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_72: -7435742968062991756
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_73: 6227590962130930789
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_74: 1446367168483722826
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_75: 7275108031889198674
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_76: -8876686703114154233
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_77: 5948378426504979197
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_78: 6400088680794493562
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_79: -8020920468177644930
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_8: -1173489470270221785
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_80: 3137011946844847485
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_81: 1530673928202441207
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_82: 7025028915479637045
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_83: -1437555918683123906
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_84: -7798474179383494004
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_85: -2014293230054323376
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_86: 4062645205657530773
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_87: 4266207199248245330
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_88: -44689476784974392
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_89: -5149947111495635775
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_9: 5147774820053426475
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_90: -5890187742397296712
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_91: -772945062238370583
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_92: -174424755790351584
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_93: -3458620418958246397
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_94: 2985961898473746273
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_95: 1556535517687326567
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_96: 1518854745715857819
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_97: 4402479021765453260
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_98: 6299182512161910742
+      10-Magic-Sprite-Sheet-Effects-Pixel-Art2-removebg-preview_99: 1235369172993391693
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
