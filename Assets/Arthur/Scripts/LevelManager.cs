@@ -19,5 +19,9 @@ public class LevelManager : MonoBehaviour
         Debug.Log(DeathMessage);
 
     }
+    public void EnemyDeath()
+    {
+        //Placeholder, ne sert à rien
+    }
     
 }

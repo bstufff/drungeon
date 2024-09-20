@@ -16,5 +16,16 @@ public class Enemy : MonoBehaviour
         this.path = path;
         this.levelManager = levelManager;
     }
+    public void TakeDamage(int dmg)
+    {
+        if (hp - dmg <= 0)
+        {
+            levelManager.EnemyDeath();
+        }
+        else
+        {
+            hp -= dmg;
+        }
+    }
 
 }
