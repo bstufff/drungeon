@@ -118,28 +118,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &802948921 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1387566895539494461, guid: 9f32845bdbf7daa4b8777b171aaacec3, type: 3}
-  m_PrefabInstance: {fileID: 1072980331}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aa640988c014fa4eb18f65a85181509, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &802948922 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6024362095076527925, guid: 9f32845bdbf7daa4b8777b171aaacec3, type: 3}
-  m_PrefabInstance: {fileID: 1072980331}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 287ce1a4166a5b84e9579fff880e0074, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &802948923 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3063066256256385137, guid: 9f32845bdbf7daa4b8777b171aaacec3, type: 3}
@@ -353,6 +331,28 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1843432174 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1387566895539494461, guid: 9f32845bdbf7daa4b8777b171aaacec3, type: 3}
+  m_PrefabInstance: {fileID: 1072980331}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa640988c014fa4eb18f65a85181509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1843432175 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6024362095076527925, guid: 9f32845bdbf7daa4b8777b171aaacec3, type: 3}
+  m_PrefabInstance: {fileID: 1072980331}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 287ce1a4166a5b84e9579fff880e0074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &966200067234445912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -452,27 +452,23 @@ PrefabInstance:
     - target: {fileID: 7917923798176794613, guid: 15d8d512a4491a74ab909692076db4e3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 802948922}
-    - target: {fileID: 7917923798176794613, guid: 15d8d512a4491a74ab909692076db4e3, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 802948921}
+      objectReference: {fileID: 1843432174}
     - target: {fileID: 8672328200564327875, guid: 15d8d512a4491a74ab909692076db4e3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 802948922}
+      objectReference: {fileID: 1843432175}
     - target: {fileID: 8672328200564327875, guid: 15d8d512a4491a74ab909692076db4e3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 802948921}
+      objectReference: {fileID: 1843432174}
     - target: {fileID: 8912748558150785937, guid: 15d8d512a4491a74ab909692076db4e3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 802948922}
+      objectReference: {fileID: 1843432175}
     - target: {fileID: 8912748558150785937, guid: 15d8d512a4491a74ab909692076db4e3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 802948921}
+      objectReference: {fileID: 1843432174}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
