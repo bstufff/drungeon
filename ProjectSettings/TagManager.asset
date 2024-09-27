@@ -41,8 +41,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Walls
+  - name: Level
     uniqueID: 133119863
+    locked: 0
+  - name: Clutter
+    uniqueID: 566381011
+    locked: 0
+  - name: Enemies
+    uniqueID: 594897191
+    locked: 0
+  - name: Player
+    uniqueID: 4242095465
     locked: 0
   m_RenderingLayers:
   - Default
