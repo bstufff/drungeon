@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 9a97798e5103e24459e998a42d8aa6c1: 1455634693
+    - 9a97798e5103e24459e998a42d8aa6c1: -36324413
+    - 9a97798e5103e24459e998a42d8aa6c1: -287887394
+    - 9a97798e5103e24459e998a42d8aa6c1: -2015187149
+    - 9a97798e5103e24459e998a42d8aa6c1: 1078299485
+    - 9a97798e5103e24459e998a42d8aa6c1: 1898789410
+    - 9a97798e5103e24459e998a42d8aa6c1: -418751096
+    - 9a97798e5103e24459e998a42d8aa6c1: -1309867004
+    - 9a97798e5103e24459e998a42d8aa6c1: 1648464077
+    - 9a97798e5103e24459e998a42d8aa6c1: 492438207
+    - 9a97798e5103e24459e998a42d8aa6c1: 1941759486
+    - 9a97798e5103e24459e998a42d8aa6c1: -261670804
+    - 9a97798e5103e24459e998a42d8aa6c1: -523453830
+    - 9a97798e5103e24459e998a42d8aa6c1: 31559076
+    - 9a97798e5103e24459e998a42d8aa6c1: 361386738
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 1455634693, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+  - {fileID: -36324413, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+  - {fileID: -287887394, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+  - {fileID: -2015187149, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+  - {fileID: 1078299485, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+  - {fileID: 1898789410, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+  - {fileID: -418751096, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+  - {fileID: -1309867004, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+  - {fileID: 1648464077, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+  - {fileID: 492438207, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+  - {fileID: 1941759486, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+  - {fileID: -261670804, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+  - {fileID: -523453830, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+  - {fileID: 31559076, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+  - {fileID: 361386738, guid: 9a97798e5103e24459e998a42d8aa6c1, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - CastleTilesheet_14
+  - CastleTilesheet_10
+  - CastleTilesheet_11
+  - CastleTilesheet_12
+  - CastleTilesheet_13
+  - CastleTilesheet_5
+  - CastleTilesheet_4
+  - CastleTilesheet_7
+  - CastleTilesheet_6
+  - CastleTilesheet_1
+  - CastleTilesheet_0
+  - CastleTilesheet_3
+  - CastleTilesheet_2
+  - CastleTilesheet_9
+  - CastleTilesheet_8
+  m_RenderDataMap: {}
+  m_Tag: SpriteAtlas
+  m_IsVariant: 0

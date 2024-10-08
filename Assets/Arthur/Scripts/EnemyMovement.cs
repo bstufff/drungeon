@@ -14,9 +14,11 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         enemyComponentReference = GetComponent<Enemy>();
-        path = enemyComponentReference.path.path;
+        path = enemyComponentReference.path.path;//Gets the path to follow from the Enemy Component
         transform.position = path[targetIndex];//Teleports to the start of the path
     }
+
+    // Update is called once per frame
     void Update()
     {
         if (transform.position == path[targetIndex])
@@ -25,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
             targetIndex++;//When the enemy reaches its target, it changes its target to be the next one on the path.
             if (targetIndex >= path.Count) 
             {
-                enemyComponentReference.levelManager.Lose("skill issue");
+                GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().Lose("you lost haha");//when reaching the end, calls the lose method in LevelManager and destroys the enemy
                 Destroy(gameObject);
             }
         }
@@ -36,7 +38,5 @@ public class EnemyMovement : MonoBehaviour
         }
 
     }
-
-    // Update is called once per frame
 
 }

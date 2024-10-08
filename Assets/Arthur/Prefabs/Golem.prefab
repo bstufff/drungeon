@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6029722224191235384}
   - component: {fileID: 1098656879755502808}
   m_Layer: 0
-  m_Name: Gobelin
+  m_Name: Golem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4798734837052593792}
   m_Father: {fileID: 0}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 594897191
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3308487660265201465, guid: 430983be71f57494f8786922f7032edc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c58a95daf72d3a44ab46a64c5b8a0376, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac4a6018f7ed7b41a52a6bd629fce8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
   path:
     path: []
 --- !u!114 &-6029722224191235384
@@ -132,8 +132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  currentHealth: 25
-  maxHealth: 25
+  currentHealth: 300
+  maxHealth: 300
 --- !u!1001 &1984803268760060570
 PrefabInstance:
   m_ObjectHideFlags: 0
