@@ -5,5 +5,7 @@ using UnityEngine;
 public class Level
 {
     public string levelName;
+    public int manaAvailable;
     public List<Path> paths;
+    public List<Wave> waves;
 }

@@ -6,22 +6,17 @@ using Unity.VisualScripting;
 public class LevelManager : MonoBehaviour
 {
     public List<Level> levels = new List<Level>();
-    private void Start()
+    private bool ingame = false;
+    public void StartLevel(int levelIndex)
     {
-        StartLevel(levels[0]);
-    }
-    public void StartLevel(Level level)
-    {
-        transform.GetComponent<EnemySpawner>().SpawnEnemies(level);
+        transform.GetComponent<EnemySpawner>().Spawn(levels[levelIndex]);
+        ingame = true;
     }
     public void Lose(string DeathMessage) 
     {
         Debug.Log(DeathMessage);
 
     }
-    public void EnemyDeath()
-    {
-        //Placeholder, ne sert à rien
-    }
+    
     
 }
