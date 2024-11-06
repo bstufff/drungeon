@@ -7,7 +7,7 @@ using static UnityEngine.GraphicsBuffer;
 public class EnemyMovement : MonoBehaviour
 {
     private Enemy enemyComponentReference;
-    private List<Vector3> path;
+    private List<Transform> path;
     public int targetIndex = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,13 +15,13 @@ public class EnemyMovement : MonoBehaviour
     {
         enemyComponentReference = GetComponent<Enemy>();
         path = enemyComponentReference.path.path;//Gets the path to follow from the Enemy Component
-        transform.position = path[targetIndex];//Teleports to the start of the path
+        transform.position = path[targetIndex].position;//Teleports to the start of the path
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position == path[targetIndex])
+        if (transform.position == path[targetIndex].position)
         {
             Debug.Log("target " + targetIndex + " reached");
             targetIndex++;//When the enemy reaches its target, it changes its target to be the next one on the path.
@@ -34,7 +34,7 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             int speed = enemyComponentReference.speed;
-            transform.position = Vector3.MoveTowards(transform.position, path[targetIndex], speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, path[targetIndex].position, speed * Time.deltaTime);
         }
 
     }
