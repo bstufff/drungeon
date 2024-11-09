@@ -5,5 +5,5 @@ using UnityEngine;
 [Serializable]
 public class Path
 {
-    public List<Vector3> path;
+    public List<Transform> path;
 }

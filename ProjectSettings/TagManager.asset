@@ -42,7 +42,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Level
+  - name: Ground
     uniqueID: 133119863
     locked: 0
   - name: Clutter
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Enemies
     uniqueID: 594897191
+    locked: 0
+  - name: Walls
+    uniqueID: 2067137185
     locked: 0
   - name: Player
     uniqueID: 4242095465
