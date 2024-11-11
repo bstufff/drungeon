@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 4685403264656507197}
   - component: {fileID: 2647798289555039215}
   - component: {fileID: 5065727821854681125}
+  - component: {fileID: 1716361160840877569}
   m_Layer: 0
   m_Name: ElectricCanon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4685403264656507197
 Transform:
   m_ObjectHideFlags: 0
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0.96298933, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.96298933, b: 1, a: 0.7058824}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,6 +103,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 6166083907108824778}
+--- !u!114 &1716361160840877569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6166083907108824778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3d5d109966da44095aeb75629e9728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 75
+  cannonballPrefab: {fileID: 5197607568494405362, guid: f6d57017ac53fa24ca0e350074facae3, type: 3}
+  firePoint: {fileID: 3375562947162503538}
+  fireInterval: 2
+  cannonballForce: 500
 --- !u!1 &7750941567073960815
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +197,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  m_Color: {r: 0, g: 0.9607844, b: 0.9960785, a: 1}
+  m_Color: {r: 0, g: 0.9607844, b: 0.9960785, a: 0.7058824}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

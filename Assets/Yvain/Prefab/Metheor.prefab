@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 6601973523909747659}
   - component: {fileID: 5251016354683848087}
   - component: {fileID: 5251203341477352825}
+  - component: {fileID: 8718225141542792912}
   m_Layer: 0
   m_Name: Metheor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6542868564931856449
 Transform:
   m_ObjectHideFlags: 0
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.4943396, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.4943396, g: 0, b: 0, a: 0.7058824}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -138,3 +139,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 6668416262439495447}
+--- !u!114 &8718225141542792912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6668416262439495447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2aeb97dfc17b2439b715475d613f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
