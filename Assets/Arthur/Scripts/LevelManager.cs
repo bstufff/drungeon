@@ -9,13 +9,15 @@ public class LevelManager : MonoBehaviour
     private bool ingame = false;
     public void StartLevel(int levelIndex)
     {
-        transform.GetComponent<EnemySpawner>().Spawn(levels[levelIndex]);
+        Level level = levels[levelIndex];
+        level.levelPrefab.SetActive(true);
+        Camera.main.orthographicSize = level.zoom;
+        transform.GetComponent<EnemySpawner>().Spawn(level);
         ingame = true;
     }
     public void Lose(string DeathMessage) 
     {
         Debug.Log(DeathMessage);
-
     }
     
     

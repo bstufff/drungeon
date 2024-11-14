@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - LevelManager
-  - Opponent
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -48,6 +48,9 @@ TagManager:
     locked: 0
   - name: Clutter
     uniqueID: 566381011
+    locked: 0
+  - name: Spells
+    uniqueID: 2770787819
     locked: 0
   - name: Enemies
     uniqueID: 594897191

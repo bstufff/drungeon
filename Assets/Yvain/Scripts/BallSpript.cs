@@ -1,18 +1,27 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BallSpript : MonoBehaviour
 {
     public int damageAmount = 10; // Montant des dégâts infligés
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.gameObject.CompareTag("Opponent"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Inflige des dégâts : " + damageAmount);
+            other.gameObject.GetComponent<HealthManager>().TakeDamage(10);
+            StopCoroutine(DeleteProjectile());
+            Destroy(gameObject);
         }
-
-        // Dans tous les cas, détruit le GameObject après la collision
+    }
+    private void Start()
+    {
+        StartCoroutine(DeleteProjectile());
+    }
+    private IEnumerator DeleteProjectile()
+    {
+        yield return new WaitForSeconds(10);
         Destroy(gameObject);
     }
 }

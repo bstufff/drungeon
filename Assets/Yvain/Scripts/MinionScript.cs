@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class MinionScript : MonoBehaviour
 {
@@ -7,68 +8,69 @@ public class MinionScript : MonoBehaviour
     public int damageAmount = 10; // Montant des dégâts infligés
     public float damageInterval = 1f; // Intervalle entre chaque dégât en secondes
 
-    private GameObject targetOpponent;
+    private GameObject target;
     private int damageCount = 0; // Compteur de dégâts infligés
     private bool isDealingDamage = false; // Indique si le GameObject est en train d'infliger des dégâts
 
     private void Update()
     {
-        FindClosestOpponent();
+        FindClosestEnemy();
 
-        if (targetOpponent != null)
+        if (target != null)
         {
             MoveTowardsTarget();
         }
     }
 
-    private void FindClosestOpponent()
+    private void FindClosestEnemy()
     {
-        GameObject[] opponents = GameObject.FindGameObjectsWithTag("Opponent");
-        GameObject closestOpponent = null;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closestEnemy = null;
         float closestDistance = Mathf.Infinity;
 
-        foreach (GameObject opponent in opponents)
+        foreach (GameObject enemy in enemies)
         {
-            float distance = Vector2.Distance(transform.position, opponent.transform.position);
+            float distance = Vector2.Distance(transform.position, enemy.transform.position);
             if (distance < closestDistance)
             {
                 closestDistance = distance;
-                closestOpponent = opponent;
+                closestEnemy = enemy;
             }
         }
 
-        targetOpponent = closestOpponent;
+        target = closestEnemy;
     }
 
     private void MoveTowardsTarget()
     {
-        Vector2 direction = (targetOpponent.transform.position - transform.position).normalized;
+        Vector2 direction = (target.transform.position - transform.position).normalized;
         transform.position += (Vector3)direction * moveSpeed * Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject == targetOpponent && other.CompareTag("Opponent") && !isDealingDamage)
+        if (other.gameObject == target && other.CompareTag("Enemy") && !isDealingDamage)
         {
             isDealingDamage = true;
-            StartCoroutine(DealDamageOverTime());
+            StartCoroutine(DealDamage(other.gameObject));
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject == targetOpponent && other.CompareTag("Opponent"))
+        if (other.gameObject == target && other.CompareTag("Enemy"))
         {
             isDealingDamage = false;
-            StopCoroutine(DealDamageOverTime());
+            StopCoroutine(DealDamage(other.gameObject));
         }
     }
 
-    private IEnumerator DealDamageOverTime()
+    private IEnumerator DealDamage(GameObject target)
     {
         while (isDealingDamage && damageCount < 10)
         {
-            Debug.Log("Inflige des dégâts : " + damageAmount);
+            target.TryGetComponent(out HealthManager health);
+            health.TakeDamage(damageAmount);
             damageCount++;
 
             if (damageCount >= 10)

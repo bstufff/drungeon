@@ -13,31 +13,31 @@ public class CanonScript : MonoBehaviour
 
     private void Update()
     {
-        GameObject closestOpponent = FindClosestOpponent();
+        GameObject closestEnemy = FindClosestEnemy();
 
-        if (closestOpponent != null)
+        if (closestEnemy != null)
         {
-            RotateTowardsTarget(closestOpponent.transform);
+            RotateTowardsTarget(closestEnemy.transform);
             FireCannonball();
         }
     }
 
-    private GameObject FindClosestOpponent()
+    private GameObject FindClosestEnemy()
     {
-        GameObject[] opponents = GameObject.FindGameObjectsWithTag("Opponent");
-        GameObject closestOpponent = null;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closestEnemy = null;
         float closestDistance = Mathf.Infinity;
 
-        foreach (GameObject opponent in opponents)
+        foreach (GameObject enemy in enemies)
         {
-            float distance = Vector2.Distance(transform.position, opponent.transform.position);
+            float distance = Vector2.Distance(transform.position, enemy.transform.position);
             if (distance < closestDistance)
             {
                 closestDistance = distance;
-                closestOpponent = opponent;
+                closestEnemy = enemy;
             }
         }
-        return closestOpponent;
+        return closestEnemy;
     }
 
     private void RotateTowardsTarget(Transform target)

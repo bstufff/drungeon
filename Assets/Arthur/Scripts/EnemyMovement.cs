@@ -23,7 +23,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (transform.position == path[targetIndex].position)
         {
-            Debug.Log("target " + targetIndex + " reached");
+            //Debug.Log("target " + targetIndex + " reached");
             targetIndex++;//When the enemy reaches its target, it changes its target to be the next one on the path.
             if (targetIndex >= path.Count) 
             {
