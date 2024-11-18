@@ -41,10 +41,12 @@ public class LevelManager : MonoBehaviour
     public void RetryPreviousLevel()
     {
         StartLevel(lastLevelPlayed);
+        FindAnyObjectByType<ManaManager>().currentMana = FindAnyObjectByType<ManaManager>().maxMana; 
     }
     public void StartNextLevel()
     {
         StartLevel(lastLevelPlayed + 1);
+        FindAnyObjectByType<ManaManager>().currentMana = FindAnyObjectByType<ManaManager>().maxMana;
     }
 
 
