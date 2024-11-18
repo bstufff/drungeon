@@ -1,10 +1,15 @@
 using System.Collections;
 using UnityEngine;
 
-public class MeteorScript : MonoBehaviour
+public class MeteorScript : MonoBehaviour, ISpell
 {
-    float dmg = 100f;
-    float delay = 0.3f;
+    private float dmg = 100f;
+    private float delay = 0.3f;
+    [SerializeField] private float destroyTimer = 10f;
+    public void InitializeSpell()
+    {
+        Destroy(gameObject, destroyTimer);
+    }
     public void OnTriggerEnter2D(Collider2D other)
     {
         StartCoroutine(DealDamage(other.gameObject.GetComponent<HealthManager>()));

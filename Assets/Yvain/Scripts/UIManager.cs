@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Menu : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     public GameObject startButton;
     public GameObject quitButton;

@@ -1,8 +1,13 @@
 using System.Collections;
 using UnityEngine;
 
-public class BlizzardScript : MonoBehaviour
+public class BlizzardScript : MonoBehaviour, ISpell
 {
+    [SerializeField] private float destroyTimer = 10f;
+    public void InitializeSpell()
+    {
+        Destroy(gameObject, destroyTimer);
+    }
     public void OnTriggerEnter2D(Collider2D other)
     {
         other.gameObject.AddComponent<FreezingStatus>();

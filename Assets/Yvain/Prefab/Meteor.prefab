@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 6542868564931856449}
   - component: {fileID: 6601973523909747659}
   - component: {fileID: 5251016354683848087}
-  - component: {fileID: 5251203341477352825}
   - component: {fileID: 8718225141542792912}
   m_Layer: 0
-  m_Name: Metheor
+  m_Name: Meteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 133119863
-  m_SortingLayer: 1
+  m_SortingLayerID: -1524179477
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.4943396, g: 0, b: 0, a: 0.7058824}
@@ -97,7 +96,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6668416262439495447}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -126,19 +125,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &5251203341477352825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6668416262439495447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdd57975ee18c2146b5f56a9a51c80b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spell: {fileID: 6668416262439495447}
 --- !u!114 &8718225141542792912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,3 +137,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2aeb97dfc17b2439b715475d613f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyTimer: 10

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 9045067597460475252}
   - component: {fileID: 5046167824217514811}
   - component: {fileID: 3925620600146644021}
-  - component: {fileID: 5630394959461021041}
   - component: {fileID: 3844079323154437826}
   m_Layer: 0
   m_Name: ElectricMinion
@@ -76,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 133119863
-  m_SortingLayer: 1
+  m_SortingLayerID: -1524179477
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 0, g: 0.9607844, b: 0.9921569, a: 0.7058824}
@@ -97,7 +96,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4381108260044044019}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -127,19 +126,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!114 &5630394959461021041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4381108260044044019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdd57975ee18c2146b5f56a9a51c80b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spell: {fileID: 4381108260044044019}
 --- !u!114 &3844079323154437826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38cc2fe8aae13804e97d90ca1a955811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 5
   damageAmount: 10
   damageInterval: 1

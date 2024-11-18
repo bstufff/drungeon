@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4685403264656507197}
   - component: {fileID: 2647798289555039215}
-  - component: {fileID: 5065727821854681125}
   - component: {fileID: 1716361160840877569}
+  - component: {fileID: 1003875711025437241}
   m_Layer: 0
   m_Name: ElectricCanon
   m_TagString: Untagged
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 133119863
-  m_SortingLayer: 1
+  m_SortingLayerID: -1524179477
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0.96298933, b: 1, a: 0.7058824}
@@ -90,19 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5065727821854681125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6166083907108824778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdd57975ee18c2146b5f56a9a51c80b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spell: {fileID: 6166083907108824778}
 --- !u!114 &1716361160840877569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,11 +102,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3d5d109966da44095aeb75629e9728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 75
+  rotationSpeed: 180
   cannonballPrefab: {fileID: 5197607568494405362, guid: f6d57017ac53fa24ca0e350074facae3, type: 3}
   firePoint: {fileID: 3375562947162503538}
-  fireInterval: 2
+  fireInterval: 1
   cannonballForce: 500
+  destroyTimer: 10
+--- !u!61 &1003875711025437241
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6166083907108824778}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 55
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &7750941567073960815
 GameObject:
   m_ObjectHideFlags: 0

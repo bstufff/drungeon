@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 1098656879755502808}
   - component: {fileID: -5744952553877255552}
   - component: {fileID: -1514339972918204909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gobelin
-  m_TagString: Opponent
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,7 +195,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -222,9 +222,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 697683914067592069, guid: 9515546620edb2b4887cca6b8efbc986, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4483711274490013452, guid: 9515546620edb2b4887cca6b8efbc986, type: 3}
       propertyPath: m_SortingLayerID
       value: 594897191
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669633631326619903, guid: 9515546620edb2b4887cca6b8efbc986, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886047780086422028, guid: 9515546620edb2b4887cca6b8efbc986, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6418746462266823706, guid: 9515546620edb2b4887cca6b8efbc986, type: 3}
       propertyPath: m_Pivot.x
@@ -305,6 +317,10 @@ PrefabInstance:
     - target: {fileID: 6418746462266823706, guid: 9515546620edb2b4887cca6b8efbc986, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9219964173006890633, guid: 9515546620edb2b4887cca6b8efbc986, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -21,20 +21,23 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position == path[targetIndex].position)
+        if (FindAnyObjectByType<LevelManager>().IsIngame)
         {
-            //Debug.Log("target " + targetIndex + " reached");
-            targetIndex++;//When the enemy reaches its target, it changes its target to be the next one on the path.
-            if (targetIndex >= path.Count) 
+            if (transform.position == path[targetIndex].position)
             {
-                GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().Lose("you lost haha");//when reaching the end, calls the lose method in LevelManager and destroys the enemy
-                Destroy(gameObject);
+                //Debug.Log("target " + targetIndex + " reached");
+                targetIndex++;//When the enemy reaches its target, it changes its target to be the next one on the path.
+                if (targetIndex >= path.Count)
+                {
+                    GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().Lose();//when reaching the end, calls the lose method in LevelManager and destroys the enemy
+                    Destroy(gameObject);
+                }
             }
-        }
-        else
-        {
-            int speed = enemyComponentReference.speed;
-            transform.position = Vector3.MoveTowards(transform.position, path[targetIndex].position, speed * Time.deltaTime);
+            else
+            {
+                int speed = enemyComponentReference.speed;
+                transform.position = Vector3.MoveTowards(transform.position, path[targetIndex].position, speed * Time.deltaTime);
+            }
         }
 
     }

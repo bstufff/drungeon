@@ -9,23 +9,35 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public List<Enemy> enemyPrefabs = new List<Enemy>();
-    public Transform enemyParentObject;
+    public Transform EnemyParentObject;
     public Transform[] enemies;
+    public int EnemiesRemaining = 0;
+    private int pathEnumerator = 0; //path enumerator, splits enemies across all paths equally
 
     private Level currentLevel;
     private int currentWave = 0;
-    private bool isSpawning;
 
     public void Spawn(Level level)
     {
+        foreach (Wave wave in level.waves)
+        {
+            EnemiesRemaining += wave.enemyCount;
+        }
         currentLevel = level;
         StartCoroutine(SpawnWave());
     }
+
+    public void DestroyAllEnemies()
+    {
+        StopAllCoroutines();
+        foreach (Transform child in EnemyParentObject)
+        {
+            Destroy(child.gameObject);
+        }
+    }
     IEnumerator SpawnWave()
     {
-        isSpawning = true;
-
-        if (currentWave >= currentLevel.waves.Count)
+        if (currentWave >= currentLevel.waves.Count || FindAnyObjectByType<LevelManager>().IsIngame)
         {
             yield break;  //No more waves
         }
@@ -39,13 +51,12 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(wave.spawnRate); //Wait before spawning the next enemy
         }
 
-        isSpawning = false;
         currentWave++;
     }
     void SpawnEnemy(GameObject prefab)
     {
-        GameObject instance = Instantiate(prefab, enemyParentObject.transform);
-        int pathEnumerator = 0; //path enumerator, splits enemies across all paths equally
+        GameObject instance = Instantiate(prefab, EnemyParentObject.transform);
+
         int pathCount = currentLevel.paths.Count;
 
         if (pathEnumerator == pathCount - 1)

@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 
-public class MinionScript : MonoBehaviour
+public class MinionScript : MonoBehaviour, ISpell
 {
     public float moveSpeed = 5f; // Vitesse de déplacement
     public int damageAmount = 10; // Montant des dégâts infligés
@@ -11,6 +11,11 @@ public class MinionScript : MonoBehaviour
     private GameObject target;
     private int damageCount = 0; // Compteur de dégâts infligés
     private bool isDealingDamage = false; // Indique si le GameObject est en train d'infliger des dégâts
+
+    public void InitializeSpell()
+    {
+        // placeholder
+    }
 
     private void Update()
     {
@@ -43,8 +48,9 @@ public class MinionScript : MonoBehaviour
 
     private void MoveTowardsTarget()
     {
-        Vector2 direction = (target.transform.position - transform.position).normalized;
-        transform.position += (Vector3)direction * moveSpeed * Time.deltaTime;
+        //Vector2 direction = (target.transform.position - transform.position).normalized;
+        //transform.position += (Vector3)direction * moveSpeed * Time.deltaTime;
+        transform.position = Vector2.Lerp(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -76,6 +82,7 @@ public class MinionScript : MonoBehaviour
             if (damageCount >= 10)
             {
                 Destroy(gameObject);
+                StopAllCoroutines();
             }
 
             yield return new WaitForSeconds(damageInterval);

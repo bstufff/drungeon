@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class CanonScript : MonoBehaviour
+public class CanonScript : MonoBehaviour, ISpell
 {
     public float rotationSpeed = 10f; // Vitesse de rotation en degrés par seconde
     public GameObject cannonballPrefab; // Préfabriqué du boulet de canon
@@ -10,15 +10,23 @@ public class CanonScript : MonoBehaviour
     public float cannonballForce = 500f; // Force appliquée au boulet de canon
 
     private float fireTimer = 0f;
+    [SerializeField] private float destroyTimer = 10f;
 
+    public void InitializeSpell()
+    {
+        Destroy(gameObject, destroyTimer);
+    }
     private void Update()
     {
-        GameObject closestEnemy = FindClosestEnemy();
-
-        if (closestEnemy != null)
+        if (GetComponent<Collider2D>().isActiveAndEnabled) // Active 
         {
-            RotateTowardsTarget(closestEnemy.transform);
-            FireCannonball();
+            GameObject closestEnemy = FindClosestEnemy();
+
+            if (closestEnemy != null)
+            {
+                RotateTowardsTarget(closestEnemy.transform);
+                FireCannonball();
+            }
         }
     }
 

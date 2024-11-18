@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3274005770739954337}
   - component: {fileID: 4450748775067380547}
   - component: {fileID: 6596779787429729321}
-  - component: {fileID: 5701142858055547242}
+  - component: {fileID: 5927228895803480880}
   m_Layer: 0
   m_Name: IceWall
   m_TagString: Untagged
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 133119863
-  m_SortingLayer: 1
+  m_SortingLayerID: -1524179477
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.7058824}
@@ -96,7 +96,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5198007129627184835}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5701142858055547242
+--- !u!114 &5927228895803480880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5198007129627184835}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdd57975ee18c2146b5f56a9a51c80b7, type: 3}
+  m_Script: {fileID: 11500000, guid: c20d811f1d9a3904eac3704a6a122465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spell: {fileID: 5198007129627184835}
+  destroyTimer: 10

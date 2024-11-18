@@ -16,6 +16,10 @@ public class HealthManager : MonoBehaviour
         healthBar.fillAmount = currentHealth / maxHealth;
         if (currentHealth <= 0)
         {
+            if (FindAnyObjectByType<EnemySpawner>().EnemiesRemaining == 1) // Si cet ennemi est le dernier du niveau
+            {
+                FindAnyObjectByType<LevelManager>().Win(); // Déclenche la séquence de victoire
+            }
             Destroy(gameObject);
         }
     }

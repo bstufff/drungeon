@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: -5430183774998776722}
   - component: {fileID: -6029722224191235384}
   - component: {fileID: 1098656879755502808}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Golem
-  m_TagString: Opponent
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 594897191
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c58a95daf72d3a44ab46a64c5b8a0376, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  baseSpeed: 0
   path:
     path: []
 --- !u!114 &-6029722224191235384
@@ -146,9 +147,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 697683914067592069, guid: 9515546620edb2b4887cca6b8efbc986, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4483711274490013452, guid: 9515546620edb2b4887cca6b8efbc986, type: 3}
       propertyPath: m_SortingLayerID
       value: 594897191
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669633631326619903, guid: 9515546620edb2b4887cca6b8efbc986, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886047780086422028, guid: 9515546620edb2b4887cca6b8efbc986, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6418746462266823706, guid: 9515546620edb2b4887cca6b8efbc986, type: 3}
       propertyPath: m_Pivot.x
@@ -229,6 +242,10 @@ PrefabInstance:
     - target: {fileID: 6418746462266823706, guid: 9515546620edb2b4887cca6b8efbc986, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9219964173006890633, guid: 9515546620edb2b4887cca6b8efbc986, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

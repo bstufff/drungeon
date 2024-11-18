@@ -26,12 +26,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147253925862540873}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 12, y: 12, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9029960683882492985}
+  m_Father: {fileID: 7886892662939883070}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &132789685128719934
 SpriteRenderer:
@@ -139,7 +139,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8303890035341645766}
   m_Father: {fileID: 9029960683882492985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &999639457240471109
@@ -223,12 +224,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3527925813560021893}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.653, z: 0}
-  m_LocalScale: {x: 1, y: 2.8, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.612, z: 0}
+  m_LocalScale: {x: 4, y: 11.2, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9029960683882492985}
+  m_Father: {fileID: 6344222908867656229}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2434407371200421404
 SpriteRenderer:
@@ -511,9 +512,6 @@ Transform:
   - {fileID: 7271669041405525426}
   - {fileID: 7418498430403961924}
   - {fileID: 1182639968143553191}
-  - {fileID: 8303890035341645766}
-  - {fileID: 2428923568056078786}
-  - {fileID: 4072596647810600985}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3063066256256385137
@@ -543,9 +541,6 @@ MonoBehaviour:
   redDragon: {fileID: 316810045494938439}
   blueDragon: {fileID: 6812288688858638129}
   whiteDragon: {fileID: 6832164592403415570}
-  redCone: {fileID: 4397366290523455407}
-  blueLine: {fileID: 4837373374647298895}
-  whiteCircle: {fileID: 7232005155178041812}
   choice: 1
 --- !u!114 &1387566895539494461
 MonoBehaviour:
@@ -562,7 +557,7 @@ MonoBehaviour:
   dragonFlame: {fileID: 7868640222009488540}
   dragonThunder: {fileID: 3527925813560021893}
   dragonShockwave: {fileID: 147253925862540873}
-  choice: 1
+  _dragonAttacks: []
 --- !u!1 &6812288688858638129
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +587,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2428923568056078786}
   m_Father: {fileID: 9029960683882492985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6058472756145740867
@@ -679,7 +675,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4072596647810600985}
   m_Father: {fileID: 9029960683882492985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9217400064396124408
@@ -832,11 +829,11 @@ Transform:
   m_GameObject: {fileID: 7868640222009488540}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7132504, w: 0.7009094}
-  m_LocalPosition: {x: 0, y: 0.4, z: 0}
-  m_LocalScale: {x: 0.39999998, y: 0.59999996, z: 0}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalScale: {x: 1.5999999, y: 2.3999999, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9029960683882492985}
+  m_Father: {fileID: 8371433225273917078}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 91}
 --- !u!212 &4000171329679784409
 SpriteRenderer:
