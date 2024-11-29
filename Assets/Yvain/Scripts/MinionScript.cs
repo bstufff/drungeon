@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 
@@ -7,10 +8,13 @@ public class MinionScript : MonoBehaviour, ISpell
     public float moveSpeed = 5f; // Vitesse de déplacement
     public int damageAmount = 10; // Montant des dégâts infligés
     public float damageInterval = 1f; // Intervalle entre chaque dégât en secondes
+    [SerializeField] GameObject enemyParentObject;
 
     private GameObject target;
     private int damageCount = 0; // Compteur de dégâts infligés
     private bool isDealingDamage = false; // Indique si le GameObject est en train d'infliger des dégâts
+
+
 
     public void InitializeSpell()
     {
@@ -29,7 +33,7 @@ public class MinionScript : MonoBehaviour, ISpell
 
     private void FindClosestEnemy()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] enemies = enemyParentObject.GetComponentsInChildren<GameObject>();
         GameObject closestEnemy = null;
         float closestDistance = Mathf.Infinity;
 
@@ -73,7 +77,7 @@ public class MinionScript : MonoBehaviour, ISpell
 
     private IEnumerator DealDamage(GameObject target)
     {
-        while (isDealingDamage && damageCount < 10)
+        while (isDealingDamage && damageCount < 10 &! target.IsDestroyed())
         {
             target.TryGetComponent(out HealthManager health);
             health.TakeDamage(damageAmount);

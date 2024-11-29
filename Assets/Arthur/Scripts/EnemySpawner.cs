@@ -12,22 +12,27 @@ public class EnemySpawner : MonoBehaviour
     public Transform EnemyParentObject;
     public Transform[] enemies;
     public int EnemiesRemaining = 0;
-    private int pathEnumerator = 0; //path enumerator, splits enemies across all paths equally
+    private int pathEnumerator = 0; // pour alterner entre les path possibles
 
     private Level currentLevel;
     private int currentWave = 0;
 
-    public void Spawn(Level level)
+    public IEnumerator Spawn(Level level, float gracePeriod)
     {
+        currentWave = 0;
+        EnemiesRemaining = 0;
+        pathEnumerator = 0;
+        currentLevel = level;
         foreach (Wave wave in level.waves)
         {
             EnemiesRemaining += wave.enemyCount;
         }
-        currentLevel = level;
+        yield return new WaitForSeconds(gracePeriod); // delay for the player to get ready
         StartCoroutine(SpawnWave());
+
     }
 
-    public void DestroyAllEnemies()
+    public void DestroyAllEnemies() // in case enemies are leftover from a previous game
     {
         StopAllCoroutines();
         foreach (Transform child in EnemyParentObject)
@@ -37,9 +42,9 @@ public class EnemySpawner : MonoBehaviour
     }
     IEnumerator SpawnWave()
     {
-        if (currentWave >= currentLevel.waves.Count || FindAnyObjectByType<LevelManager>().IsIngame)
+        if (currentWave >= currentLevel.waves.Count && FindAnyObjectByType<LevelManager>().IsIngame)
         {
-            yield break;  //No more waves
+            yield break;  
         }
 
         // Get the current wave

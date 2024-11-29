@@ -10,43 +10,56 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject winScreen;
     private int lastLevelPlayed = 0;
+    private SpellManager spellManager;
+    private EnemySpawner enemySpawner;
+    [SerializeField] private ManaManager manaManager;
+    private void Start()
+    {
+        spellManager = GetComponent<SpellManager>();
+        enemySpawner = GetComponent<EnemySpawner>();
+    }
     public void StartLevel(int levelIndex)
     {
-        GetComponent<SpellManager>().DestroyAllSpells();
+        spellManager.DestroyAllSpells();
         lastLevelPlayed = levelIndex;
-        gameOverScreen.SetActive(false);
 
         Level level = levels[levelIndex];
-
         level.levelPrefab.SetActive(true);
+
         Camera.main.orthographicSize = level.zoom;
-        transform.GetComponent<EnemySpawner>().Spawn(level);
+
+        manaManager.maxMana = level.manaAvailable;
+        manaManager.currentMana = manaManager.maxMana;
+        manaManager.RefreshManaBar();
+
+        StartCoroutine(enemySpawner.Spawn(level, 3));
 
         IsIngame = true;
     }
     public void Lose() 
     {
-        GetComponent<SpellManager>().DestroyAllSpells();
+        spellManager.DestroyAllSpells();
         IsIngame = false;
         gameOverScreen.SetActive(true);
-        transform.GetComponent<EnemySpawner>().DestroyAllEnemies();
+        enemySpawner.DestroyAllEnemies();
     }
     public void Win()
     {
-        GetComponent<SpellManager>().DestroyAllSpells();
+        spellManager.DestroyAllSpells();
         IsIngame = false;
         winScreen.SetActive(true);
-        transform.GetComponent<EnemySpawner>().DestroyAllEnemies();
+        enemySpawner.DestroyAllEnemies();
     }
     public void RetryPreviousLevel()
     {
         StartLevel(lastLevelPlayed);
-        FindAnyObjectByType<ManaManager>().currentMana = FindAnyObjectByType<ManaManager>().maxMana; 
+        manaManager.currentMana = manaManager.maxMana; 
     }
     public void StartNextLevel()
     {
+        levels[lastLevelPlayed].levelPrefab.SetActive(false);
         StartLevel(lastLevelPlayed + 1);
-        FindAnyObjectByType<ManaManager>().currentMana = FindAnyObjectByType<ManaManager>().maxMana;
+        manaManager.currentMana = manaManager.maxMana;
     }
 
 
