@@ -3,81 +3,90 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 
-public class MinionScript : MonoBehaviour, ISpell
+public class MinionScript : Spell
 {
-    public float moveSpeed = 5f; // Vitesse de déplacement
-    public int damageAmount = 10; // Montant des dégâts infligés
-    public float damageInterval = 1f; // Intervalle entre chaque dégât en secondes
-    [SerializeField] GameObject enemyParentObject;
+    public float moveSpeed = 5f; 
+    public int damageAmount = 10; 
+    public float damageInterval = 1f; // Intervalle entre chaque attaque
 
+    private Collider2D minionCollider;
+    private bool isAttacking = false;
+    private GameObject enemyParentObject;
     private GameObject target;
     private int damageCount = 0; // Compteur de dégâts infligés
-    private bool isDealingDamage = false; // Indique si le GameObject est en train d'infliger des dégâts
+    
 
-
-
-    public void InitializeSpell()
+    private void Start()
     {
-        // placeholder
+        minionCollider = GetComponent<Collider2D>();
+    }
+    public override float ManaCost => 75;
+
+    public override void PlaceSpell(ManaManager manaManager)
+    {
+        base.PlaceSpell(manaManager); 
+        enemyParentObject = FindAnyObjectByType<EnemySpawner>().EnemyParentObject.gameObject;
     }
 
     private void Update()
     {
-        FindClosestEnemy();
-
-        if (target != null)
+        if (minionCollider.isActiveAndEnabled)
         {
-            MoveTowardsTarget();
+            if (target == null)
+            {
+                FindClosestEnemy();
+            }
+            {
+                MoveTowardsTarget();
+            }
         }
     }
 
     private void FindClosestEnemy()
     {
-        GameObject[] enemies = enemyParentObject.GetComponentsInChildren<GameObject>();
-        GameObject closestEnemy = null;
-        float closestDistance = Mathf.Infinity;
-
-        foreach (GameObject enemy in enemies)
+        Transform[] enemyTransforms = enemyParentObject.GetComponentsInChildren<Transform>();
+        if (enemyTransforms.Length > 1)
         {
-            float distance = Vector2.Distance(transform.position, enemy.transform.position);
-            if (distance < closestDistance)
+            GameObject closestEnemy = null;
+            float closestDistance = Mathf.Infinity;
+
+            foreach (Transform enemyTransform in enemyTransforms)
             {
-                closestDistance = distance;
-                closestEnemy = enemy;
+                if (enemyTransform.gameObject == enemyParentObject)
+                    continue; // Skips the parent transform as it is not an enemy
+
+                float distance = Vector2.Distance(transform.position, enemyTransform.position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestEnemy = enemyTransform.gameObject;
+                }
             }
+
+            target = closestEnemy;
         }
 
-        target = closestEnemy;
     }
 
     private void MoveTowardsTarget()
     {
-        //Vector2 direction = (target.transform.position - transform.position).normalized;
-        //transform.position += (Vector3)direction * moveSpeed * Time.deltaTime;
-        transform.position = Vector2.Lerp(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject == target && other.CompareTag("Enemy") && !isDealingDamage)
+        if (target != null) // To avoid moving towards a destroyed enemy
         {
-            isDealingDamage = true;
-            StartCoroutine(DealDamage(other.gameObject));
+            transform.position = Vector2.Lerp(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
         }
     }
-
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject == target && other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") & !isAttacking)
         {
-            isDealingDamage = false;
-            StopCoroutine(DealDamage(other.gameObject));
+            isAttacking = true;
+            StartCoroutine(DealDamage(other.gameObject));
         }
     }
 
     private IEnumerator DealDamage(GameObject target)
     {
-        while (isDealingDamage && damageCount < 10 &! target.IsDestroyed())
+        if (isAttacking && damageCount < 10)
         {
             target.TryGetComponent(out HealthManager health);
             health.TakeDamage(damageAmount);
@@ -90,6 +99,7 @@ public class MinionScript : MonoBehaviour, ISpell
             }
 
             yield return new WaitForSeconds(damageInterval);
+            isAttacking = false;
         }
     }
 }

@@ -1,11 +1,13 @@
 using System.Collections;
 using UnityEngine;
 
-public class BlizzardScript : MonoBehaviour, ISpell
+public class BlizzardScript : Spell
 {
     [SerializeField] private float destroyTimer = 10f;
-    public void InitializeSpell()
+    public override float ManaCost => 30;
+    public override void PlaceSpell(ManaManager manaManager)
     {
+        base.PlaceSpell(manaManager);
         Destroy(gameObject, destroyTimer);
     }
     public void OnTriggerEnter2D(Collider2D other)

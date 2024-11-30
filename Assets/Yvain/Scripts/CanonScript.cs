@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class CanonScript : MonoBehaviour, ISpell
+public class CanonScript : Spell
 {
     public float rotationSpeed = 10f; // Vitesse de rotation en degrés par seconde
     public GameObject cannonballPrefab; // Préfabriqué du boulet de canon
@@ -12,8 +12,11 @@ public class CanonScript : MonoBehaviour, ISpell
     private float fireTimer = 0f;
     [SerializeField] private float destroyTimer = 10f;
 
-    public void InitializeSpell()
+    public override float ManaCost => 50;
+
+    public override void PlaceSpell(ManaManager manaManager)
     {
+        base.PlaceSpell(manaManager);
         Destroy(gameObject, destroyTimer);
     }
     private void Update()

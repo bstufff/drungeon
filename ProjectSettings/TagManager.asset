@@ -49,7 +49,7 @@ TagManager:
   - name: Clutter
     uniqueID: 566381011
     locked: 0
-  - name: Spells
+  - name: GroundedSpells
     uniqueID: 2770787819
     locked: 0
   - name: Enemies
@@ -60,6 +60,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 4242095465
+    locked: 0
+  - name: AirborneSpells
+    uniqueID: 3232350635
     locked: 0
   m_RenderingLayers:
   - Default

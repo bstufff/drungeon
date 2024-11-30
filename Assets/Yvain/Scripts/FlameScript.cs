@@ -2,11 +2,13 @@ using System.Collections;
 using System.Diagnostics;
 using UnityEngine;
 
-public class FlameScript : MonoBehaviour, ISpell
+public class FlameScript : Spell
 {
     [SerializeField] private float destroyTimer = 10f;
-    public void InitializeSpell()
+    public override float ManaCost => 25;
+    public override void PlaceSpell(ManaManager manaManager)
     {
+        base.PlaceSpell(manaManager);
         Destroy(gameObject, destroyTimer);
     }
     public void OnTriggerEnter2D(Collider2D other)

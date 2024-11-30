@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  baseSpeed: 0
+  baseSpeed: 2
   path:
     path: []
 --- !u!114 &-6029722224191235384

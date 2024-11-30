@@ -35,7 +35,7 @@ public class EnemyMovement : MonoBehaviour
             }
             else
             {
-                int speed = enemyComponentReference.speed;
+                float speed = enemyComponentReference.speed;
                 transform.position = Vector3.MoveTowards(transform.position, path[targetIndex].position, speed * Time.deltaTime);
             }
         }

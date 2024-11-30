@@ -28,9 +28,7 @@ public class LevelManager : MonoBehaviour
 
         Camera.main.orthographicSize = level.zoom;
 
-        manaManager.maxMana = level.manaAvailable;
-        manaManager.currentMana = manaManager.maxMana;
-        manaManager.RefreshManaBar();
+        manaManager.ResetMana(level.manaAvailable);
 
         StartCoroutine(enemySpawner.Spawn(level, 3));
 
@@ -53,18 +51,12 @@ public class LevelManager : MonoBehaviour
     public void RetryPreviousLevel()
     {
         StartLevel(lastLevelPlayed);
-        manaManager.currentMana = manaManager.maxMana; 
     }
     public void StartNextLevel()
     {
         levels[lastLevelPlayed].levelPrefab.SetActive(false);
         StartLevel(lastLevelPlayed + 1);
-        manaManager.currentMana = manaManager.maxMana;
     }
 
 
-}
-
-public interface ISpell {
-    public void InitializeSpell();
 }

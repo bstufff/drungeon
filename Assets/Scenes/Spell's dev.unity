@@ -721,7 +721,6 @@ RectTransform:
   m_Children:
   - {fileID: 3042166227218414138}
   - {fileID: 1517233573522970964}
-  - {fileID: 2012451161}
   m_Father: {fileID: 5862482468224044501}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1864,16 +1863,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012451160}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 792682832}
+  m_Father: {fileID: 1517233573522970964}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 248.73206}
+  m_AnchoredPosition: {x: 440, y: 491.35706}
   m_SizeDelta: {x: 169.4896, y: 37.262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2012451162
@@ -2435,6 +2434,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4420002093772719800, guid: e7974a21fb9318a459fa31994b8a9d41, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6211293232598820861, guid: e7974a21fb9318a459fa31994b8a9d41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2474,6 +2477,10 @@ PrefabInstance:
     - target: {fileID: 6211293232598820861, guid: e7974a21fb9318a459fa31994b8a9d41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6351226205571130099, guid: e7974a21fb9318a459fa31994b8a9d41, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2722,7 +2729,6 @@ MonoBehaviour:
   currentMana: 100
   manaBar: {fileID: 4568858315038385005}
   manaText: {fileID: 2012451162}
-  manaPrice: 0
 --- !u!222 &1312681833440588325
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2832,25 +2838,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1454754699}
         m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
-        m_MethodName: SelectSpell
+        m_MethodName: UseSpell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1237150640829088473}
-        m_TargetAssemblyTypeName: ManaManager, Assembly-CSharp
-        m_MethodName: ManaUse
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 50
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -2867,12 +2861,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 197123487761427310}
   - {fileID: 7345895606637453072}
+  - {fileID: 197123487761427310}
   - {fileID: 6696403826500524723}
   - {fileID: 4591647292181802350}
   - {fileID: 4905428503645971418}
   - {fileID: 225135121784491791}
+  - {fileID: 2012451161}
   m_Father: {fileID: 792682832}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1546671412636573543
@@ -3609,25 +3604,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1454754699}
         m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
-        m_MethodName: SelectSpell
+        m_MethodName: UseSpell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 5
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1237150640829088473}
-        m_TargetAssemblyTypeName: ManaManager, Assembly-CSharp
-        m_MethodName: ManaUse
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 75
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -4085,25 +4068,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1454754699}
         m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
-        m_MethodName: SelectSpell
+        m_MethodName: UseSpell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1237150640829088473}
-        m_TargetAssemblyTypeName: ManaManager, Assembly-CSharp
-        m_MethodName: ManaUse
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 30
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -4157,11 +4128,11 @@ PrefabInstance:
       objectReference: {fileID: 649538789782185884}
     - target: {fileID: 2202900937413703302, guid: 19c17a58fbb3c9944a1c2cb893233bd6, type: 3}
       propertyPath: levels.Array.data[0].manaAvailable
-      value: 75
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2202900937413703302, guid: 19c17a58fbb3c9944a1c2cb893233bd6, type: 3}
       propertyPath: levels.Array.data[1].manaAvailable
-      value: 100
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 2202900937413703302, guid: 19c17a58fbb3c9944a1c2cb893233bd6, type: 3}
       propertyPath: levels.Array.data[0].paths.Array.size
@@ -4873,24 +4844,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1454754699}
         m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
-        m_MethodName: SelectSpell
+        m_MethodName: UseSpell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1237150640829088473}
-        m_TargetAssemblyTypeName: ManaManager, Assembly-CSharp
-        m_MethodName: ManaUse
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 55
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5550,7 +5509,7 @@ GameObject:
   - component: {fileID: 2209555405533044927}
   - component: {fileID: 1469943913068835405}
   m_Layer: 5
-  m_Name: Spellmeteor
+  m_Name: SpellMeteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6536,25 +6495,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1454754699}
         m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
-        m_MethodName: SelectSpell
+        m_MethodName: UseSpell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1237150640829088473}
-        m_TargetAssemblyTypeName: ManaManager, Assembly-CSharp
-        m_MethodName: ManaUse
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 50
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -7121,25 +7068,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1454754699}
         m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
-        m_MethodName: SelectSpell
+        m_MethodName: UseSpell
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1237150640829088473}
-        m_TargetAssemblyTypeName: ManaManager, Assembly-CSharp
-        m_MethodName: ManaUse
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 25
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2

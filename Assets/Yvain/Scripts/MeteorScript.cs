@@ -1,13 +1,16 @@
 using System.Collections;
 using UnityEngine;
 
-public class MeteorScript : MonoBehaviour, ISpell
+public class MeteorScript : Spell
 {
     private float dmg = 100f;
     private float delay = 0.3f;
     [SerializeField] private float destroyTimer = 10f;
-    public void InitializeSpell()
+
+    public override float ManaCost => 35;
+    public override void PlaceSpell(ManaManager manaManager)
     {
+        base.PlaceSpell(manaManager);
         Destroy(gameObject, destroyTimer);
     }
     public void OnTriggerEnter2D(Collider2D other)
