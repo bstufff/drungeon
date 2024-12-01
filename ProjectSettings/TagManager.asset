@@ -58,11 +58,11 @@ TagManager:
   - name: Walls
     uniqueID: 2067137185
     locked: 0
-  - name: Player
-    uniqueID: 4242095465
-    locked: 0
   - name: AirborneSpells
     uniqueID: 3232350635
+    locked: 0
+  - name: Player
+    uniqueID: 4242095465
     locked: 0
   m_RenderingLayers:
   - Default

@@ -15,11 +15,15 @@ public class EnemySpawner : MonoBehaviour
     private int pathEnumerator = 0; // pour alterner entre les path possibles
 
     private Level currentLevel;
-    private int currentWave = 0;
+    private LevelManager levelManager;
+
+    private void Start()
+    {
+        levelManager = GetComponent<LevelManager>();
+    }
 
     public IEnumerator Spawn(Level level, float gracePeriod)
     {
-        currentWave = 0;
         EnemiesRemaining = 0;
         pathEnumerator = 0;
         currentLevel = level;
@@ -28,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
             EnemiesRemaining += wave.enemyCount;
         }
         yield return new WaitForSeconds(gracePeriod); // delay for the player to get ready
-        StartCoroutine(SpawnWave());
+        StartCoroutine(SpawnWaves());
 
     }
 
@@ -40,23 +44,20 @@ public class EnemySpawner : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
-    IEnumerator SpawnWave()
+    IEnumerator SpawnWaves()
     {
-        if (currentWave >= currentLevel.waves.Count && FindAnyObjectByType<LevelManager>().IsIngame)
+        foreach (Wave wave in currentLevel.waves)
         {
-            yield break;  
+            for (int i = 0; i < wave.enemyCount; i++)
+            {
+                if (!levelManager.IsIngame)
+                {
+                    yield break;
+                }
+                SpawnEnemy(wave.enemyPrefab);
+                yield return new WaitForSeconds(wave.spawnRate); //Wait before spawning the next enemy
+            }
         }
-
-        // Get the current wave
-        Wave wave = currentLevel.waves[currentWave];
-
-        for (int i = 0; i < wave.enemyCount; i++)
-        {
-            SpawnEnemy(wave.enemyPrefab);
-            yield return new WaitForSeconds(wave.spawnRate); //Wait before spawning the next enemy
-        }
-
-        currentWave++;
     }
     void SpawnEnemy(GameObject prefab)
     {

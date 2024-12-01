@@ -48,6 +48,10 @@ public class SpellManager : MonoBehaviour
                 activeSpell.GetComponent<Spell>().PlaceSpell(manager);
                 activeSpell = null;
             }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Destroy(activeSpell);
+            }
         }
 
     }

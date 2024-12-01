@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int speed = 10;
-    public int baseSpeed;
+    public float speed = 10;
+    public float baseSpeed;
     //public EnemyStatus status;
     public Path path;
-    public Enemy(int speed, Path path)
+    public Enemy(float speed, Path path)
     {
         this.speed = speed;
         this.path = path;

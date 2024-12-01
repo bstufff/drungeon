@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -870,9 +870,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -1.714816, y: -0.6446406, z: 0.052779894}
+    m_Target: {x: -1.4949332, y: 0.3318438, z: 0.038788795}
     speed: 2
-    m_Value: {x: -1.714816, y: -0.6446406, z: 0.052779894}
+    m_Value: {x: -1.4949332, y: 0.3318438, z: 0.038788795}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -922,9 +922,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.308875
+    m_Target: 5.707979
     speed: 2
-    m_Value: 4.308875
+    m_Value: 5.707979
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -996,7 +996,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e6faffff
+      m_ExpandedIDs: 1a48feffe6fafffff6ae0000feae000010af000036af000098af0000a0b00000b4b00000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1168,7 +1168,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Yvain/Prefab
+    - Assets/Arthur/Prefabs
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1178,16 +1178,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Yvain/Prefab
+  - Assets/Arthur/Prefabs
   m_LastFoldersGridSize: 64
   m_LastProjectPath: C:\Users\arthu\Bureau\Unity Projects\drungeon
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 200.40002}
-    m_SelectedIDs: c0b50000
-    m_LastClickedID: 46528
-    m_ExpandedIDs: 0000000068b300006ab300006cb300006eb30000
+    scrollPos: {x: 0, y: 71.39993}
+    m_SelectedIDs: 62dc0000
+    m_LastClickedID: 56418
+    m_ExpandedIDs: 000000006cb300006eb3000070b3000072b30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1216,7 +1216,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000068b300006ab300006cb300006eb30000
+    m_ExpandedIDs: 000000006cb300006eb3000070b3000072b30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1242,8 +1242,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ae4cffff
-    m_LastClickedInstanceID: -45906
+    m_SelectedInstanceIDs: d61d0100
+    m_LastClickedInstanceID: 73174
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000ccac0000
     m_RenameOverlay:

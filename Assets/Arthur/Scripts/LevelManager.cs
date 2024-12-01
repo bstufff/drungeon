@@ -54,6 +54,11 @@ public class LevelManager : MonoBehaviour
     }
     public void StartNextLevel()
     {
+        if (lastLevelPlayed + 1 > levels.Count)
+        {
+            Debug.Log("There are no more levels !");
+            return;
+        }
         levels[lastLevelPlayed].levelPrefab.SetActive(false);
         StartLevel(lastLevelPlayed + 1);
     }
