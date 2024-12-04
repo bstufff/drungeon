@@ -5,9 +5,9 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class MinionScript : Spell
 {
-    public float moveSpeed = 5f; 
-    public int damageAmount = 10; 
-    public float damageInterval = 1f; // Intervalle entre chaque attaque
+    [SerializeField] private float moveSpeed = 5f; 
+    [SerializeField] private int damageAmount = 10; 
+    [SerializeField] private float damageInterval = 1f; // Intervalle entre chaque attaque
 
     private Collider2D minionCollider;
     private bool isAttacking = false;

@@ -4,14 +4,16 @@ public class DragonAttack : MonoBehaviour
 {
     private SpriteRenderer attackSprite;
     [SerializeField] private float _attackDamage;
+    private LevelManager levelManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         attackSprite = GetComponent<SpriteRenderer>();
+        levelManager = FindAnyObjectByType<LevelManager>();
     }
     void Update()
     {
-        if (Input.GetMouseButton(0) && FindAnyObjectByType<LevelManager>().IsIngame)
+        if (Input.GetMouseButton(0) && levelManager.IsIngame)
         {
             attackSprite.enabled = true;
         }

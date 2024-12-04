@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject startButton;
-    public GameObject quitButton;
-    public GameObject leftButton;
-    public GameObject rightButton;
-    public GameObject selectButton;
+    [SerializeField] private GameObject startButton;
+    [SerializeField] private GameObject quitButton;
+    [SerializeField] private GameObject leftButton;
+    [SerializeField] private GameObject rightButton;
+    [SerializeField] private GameObject selectButton;
     void Start()
     {
         startButton.SetActive(true);

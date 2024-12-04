@@ -6,9 +6,10 @@ using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public int targetIndex = 0;
     private Enemy enemyComponentReference;
     private List<Transform> path;
-    public int targetIndex = 0;
+    private LevelManager levelManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,12 +17,13 @@ public class EnemyMovement : MonoBehaviour
         enemyComponentReference = GetComponent<Enemy>();
         path = enemyComponentReference.path.path;//Gets the path to follow from the Enemy Component
         transform.position = path[targetIndex].position;//Teleports to the start of the path
+        levelManager = FindAnyObjectByType<LevelManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (FindAnyObjectByType<LevelManager>().IsIngame)
+        if (levelManager.IsIngame)
         {
             if (transform.position == path[targetIndex].position)
             {

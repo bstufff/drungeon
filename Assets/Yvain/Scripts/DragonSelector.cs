@@ -3,71 +3,33 @@ using UnityEngine;
 
 public class DragonSelector : MonoBehaviour
 {
-    public GameObject redDragon;
-    public GameObject blueDragon;
-    public GameObject whiteDragon;
-    //public GameObject redCone;
-    //public GameObject blueLine;
-    //public GameObject whiteCircle;
+    private GameObject[] dragons = new GameObject[3];
+    private int selectedDragon = 0;
 
-    public int choice = 1;
-
-    public void AddRightChoice()
-    {
-        choice++;
-    }
-    public void AddLeftChoice() 
-    {
-        choice--;
-    }
-    
     private void Start()
     {
-        redDragon.SetActive(true);
-        blueDragon.SetActive(false);
-        whiteDragon.SetActive(false);
-        //redCone.SetActive(true);
-        //blueLine.SetActive(false);
-        //whiteCircle.SetActive(false);
+        int i = 0;
+        foreach (Transform child in transform)
+        {
+            dragons[i] = child.gameObject;
+        }
     }
-    void Update()
+
+    public void ChangeSelectedDragon(int selection)
     {
-        if(choice < 1)
+        dragons[selectedDragon].SetActive(false);
+
+        selectedDragon += selection;
+
+        if (selectedDragon < 0)
         {
-            choice = 3;
+            selectedDragon = 2;
         }
-        else if(choice > 3)
+        else if (selectedDragon > 2)
         {
-            choice = 1;
+            selectedDragon = 0;
         }
 
-        if (choice == 1)
-        {
-            redDragon.SetActive(true);
-            blueDragon.SetActive(false);
-            whiteDragon.SetActive(false);
-            //redCone.SetActive(true);
-            //blueLine.SetActive(false);
-            //whiteCircle.SetActive(false);
-        }
-        if (choice == 2)
-        {
-            redDragon.SetActive(false);
-            blueDragon.SetActive(true);
-            whiteDragon.SetActive(false);
-            //redCone.SetActive(false);
-            //blueLine.SetActive(true);
-            //whiteCircle.SetActive(false);
-        }
-        if (choice == 3)
-        {
-            redDragon.SetActive(false);
-            blueDragon.SetActive(false);
-            whiteDragon.SetActive(true);
-            //redCone.SetActive(false);
-            //blueLine.SetActive(false);
-            //whiteCircle.SetActive(true);
-        }
-
+        dragons[selectedDragon].SetActive(true);
     }
 }

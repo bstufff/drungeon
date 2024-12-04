@@ -429,6 +429,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6825471969892548614, guid: e7974a21fb9318a459fa31994b8a9d41, type: 3}
   m_PrefabInstance: {fileID: 637119248614160474}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &362820663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6812288688858638129, guid: 9f32845bdbf7daa4b8777b171aaacec3, type: 3}
+  m_PrefabInstance: {fileID: 1518515010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &377517953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1102,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404056245}
   m_CullTransparentMesh: 1
+--- !u!1 &1418259216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 316810045494938439, guid: 9f32845bdbf7daa4b8777b171aaacec3, type: 3}
+  m_PrefabInstance: {fileID: 1518515010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1453153725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6517175006513908866, guid: e7974a21fb9318a459fa31994b8a9d41, type: 3}
@@ -1149,6 +1159,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Player '
       objectReference: {fileID: 0}
+    - target: {fileID: 6024362095076527925, guid: 9f32845bdbf7daa4b8777b171aaacec3, type: 3}
+      propertyPath: dragons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024362095076527925, guid: 9f32845bdbf7daa4b8777b171aaacec3, type: 3}
+      propertyPath: 'dragons.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1418259216}
+    - target: {fileID: 6024362095076527925, guid: 9f32845bdbf7daa4b8777b171aaacec3, type: 3}
+      propertyPath: 'dragons.Array.data[1]'
+      value: 
+      objectReference: {fileID: 362820663}
+    - target: {fileID: 6024362095076527925, guid: 9f32845bdbf7daa4b8777b171aaacec3, type: 3}
+      propertyPath: 'dragons.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1746620792}
     - target: {fileID: 9029960683882492985, guid: 9f32845bdbf7daa4b8777b171aaacec3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1365,6 +1391,11 @@ CanvasRenderer:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2154838143806093196, guid: 9662fdf213b6f5a419ba8c593dc63c3e, type: 3}
   m_PrefabInstance: {fileID: 5492658694936443498}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1746620792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6832164592403415570, guid: 9f32845bdbf7daa4b8777b171aaacec3, type: 3}
+  m_PrefabInstance: {fileID: 1518515010}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1748343076
 GameObject:
@@ -5393,7 +5424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2030749384129353263, guid: 9662fdf213b6f5a419ba8c593dc63c3e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3952780864027366171, guid: 9662fdf213b6f5a419ba8c593dc63c3e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6927,7 +6958,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 0
           m_BoolArgument: 0
@@ -7232,7 +7263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 649538791537507714, guid: 26b6919ef9f79134d959de94ca80baa8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1081510230842816682, guid: 26b6919ef9f79134d959de94ca80baa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7739,24 +7770,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1518515011}
         m_TargetAssemblyTypeName: DragonSelector, Assembly-CSharp
-        m_MethodName: AddLeftChoice
-        m_Mode: 1
+        m_MethodName: ChangeSelectedDragon
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DragonAttack, Assembly-CSharp
-        m_MethodName: AddLeftChoice
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7833,24 +7852,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1518515011}
         m_TargetAssemblyTypeName: DragonSelector, Assembly-CSharp
-        m_MethodName: AddRightChoice
-        m_Mode: 1
+        m_MethodName: ChangeSelectedDragon
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DragonAttack, Assembly-CSharp
-        m_MethodName: AddRightChoice
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

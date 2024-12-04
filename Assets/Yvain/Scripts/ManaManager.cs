@@ -7,8 +7,9 @@ public class ManaManager : MonoBehaviour
 {
     public float maxMana;
     public float currentMana;
-    public Image manaBar;
-    public TextMeshProUGUI manaText;
+    
+    [SerializeField] private Image manaBar;
+    [SerializeField] private TextMeshProUGUI manaText;
     public void ManaUse(float manaCost)
     {
         if (currentMana - manaCost > 0)

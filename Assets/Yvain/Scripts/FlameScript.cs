@@ -11,11 +11,11 @@ public class FlameScript : Spell
         base.PlaceSpell(manaManager);
         Destroy(gameObject, destroyTimer);
     }
-    public void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         other.gameObject.AddComponent<BurningStatus>();
     }
-    public void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         Destroy(other.gameObject.GetComponent<BurningStatus>());
     }
