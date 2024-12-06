@@ -485,10 +485,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287ce1a4166a5b84e9579fff880e0074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redDragon: {fileID: 316810045494938439}
-  blueDragon: {fileID: 6812288688858638129}
-  whiteDragon: {fileID: 6832164592403415570}
-  choice: 1
 --- !u!1 &6812288688858638129
 GameObject:
   m_ObjectHideFlags: 0
