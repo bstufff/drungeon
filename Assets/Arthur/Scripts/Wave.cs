@@ -4,8 +4,8 @@ using UnityEngine;
 [Serializable]
 public class Wave
 {
+    public int enemyType; // index du prototype
     public int enemyCount;
-    public GameObject enemyPrefab;
     public float spawnRate;
 }
 
