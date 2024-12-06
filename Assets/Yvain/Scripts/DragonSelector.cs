@@ -12,6 +12,7 @@ public class DragonSelector : MonoBehaviour
         foreach (Transform child in transform)
         {
             dragons[i] = child.gameObject;
+            i++;
         }
     }
 

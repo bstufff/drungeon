@@ -1,18 +1,14 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public List<Enemy> enemyPrefabs = new List<Enemy>();
-    public Transform EnemyParentObject;
-    public Transform[] enemies;
+    public List<Enemy> enemyPrototypes = new List<Enemy>(); // Liste des prototypes d'ennemis
+    public Transform EnemyParentObject;                    // Parent des ennemis dans la hiérarchie
     public int EnemiesRemaining = 0;
-    private int pathEnumerator = 0; // pour alterner entre les path possibles
+
+    private int pathEnumerator = 0; // Pour alterner entre les chemins possibles
 
     private Level currentLevel;
     private LevelManager levelManager;
@@ -22,21 +18,24 @@ public class EnemySpawner : MonoBehaviour
         levelManager = GetComponent<LevelManager>();
     }
 
+    // Démarre la séquence de spawn avec un délai initial
     public IEnumerator Spawn(Level level, float gracePeriod)
     {
         EnemiesRemaining = 0;
         pathEnumerator = 0;
         currentLevel = level;
+
         foreach (Wave wave in level.waves)
         {
             EnemiesRemaining += wave.enemyCount;
         }
-        yield return new WaitForSeconds(gracePeriod); // delay for the player to get ready
-        StartCoroutine(SpawnWaves());
 
+        yield return new WaitForSeconds(gracePeriod); // Délai pour que le joueur se prépare
+        StartCoroutine(SpawnWaves());
     }
 
-    public void DestroyAllEnemies() // in case enemies are leftover from a previous game
+    // Détruit tous les ennemis encore présents
+    public void DestroyAllEnemies()
     {
         StopAllCoroutines();
         foreach (Transform child in EnemyParentObject)
@@ -44,7 +43,9 @@ public class EnemySpawner : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
-    IEnumerator SpawnWaves()
+
+    // Gère le spawn des vagues d'ennemis
+    private IEnumerator SpawnWaves()
     {
         foreach (Wave wave in currentLevel.waves)
         {
@@ -54,27 +55,31 @@ public class EnemySpawner : MonoBehaviour
                 {
                     yield break;
                 }
-                SpawnEnemy(wave.enemyPrefab);
-                yield return new WaitForSeconds(wave.spawnRate); //Wait before spawning the next enemy
+
+                SpawnEnemy(wave.enemyType); // Utilise un type pour chercher un prototype
+                yield return new WaitForSeconds(wave.spawnRate);
             }
         }
     }
-    void SpawnEnemy(GameObject prefab)
+
+    // Gère le spawn d'un ennemi à partir d'un prototype
+    private void SpawnEnemy(int enemyType)
     {
-        GameObject instance = Instantiate(prefab, EnemyParentObject.transform);
+        if (enemyType < 0 || enemyType >= enemyPrototypes.Count)
+        {
+            Debug.LogError("Type d'ennemi invalide !");
+            return;
+        }
 
+        // Clone l'ennemi à partir du prototype
+        Enemy enemyInstance = enemyPrototypes[enemyType].Clone();
+        enemyInstance.transform.SetParent(EnemyParentObject);
+
+        // Assigner un chemin au nouvel ennemi
         int pathCount = currentLevel.paths.Count;
+        enemyInstance.path = currentLevel.paths[pathEnumerator];
 
-        if (pathEnumerator == pathCount - 1)
-        {
-            pathEnumerator = 0;
-        }
-        else
-        {
-            pathEnumerator++;
-        }
-        instance.GetComponent<Enemy>().path = currentLevel.paths[pathEnumerator];
+        // Alterner entre les chemins
+        pathEnumerator = (pathEnumerator + 1) % pathCount;
     }
 }
-
-
