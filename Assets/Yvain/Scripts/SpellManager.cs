@@ -13,18 +13,18 @@ public class SpellManager : MonoBehaviour
         if (activeSpell == null) // Si aucun sort est en train d'être placé
         {
             float activeSpellCost = spells[spellIndex].GetComponent<Spell>().ManaCost;
-            if (manager.currentMana < activeSpellCost) 
+            if (manager.currentMana <= activeSpellCost)
             {
                 Debug.Log("Not enough mana !");
+
                 return; // Exit early
             }
-
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            activeSpell = Instantiate(spells[spellIndex].gameObject, mousePosition, transform.rotation, parentSpellObject); // Créée l'instance du sort à placer
-            activeSpell.SetActive(true);
-        }
-        else
-        {
+            else
+            {
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                activeSpell = Instantiate(spells[spellIndex].gameObject, mousePosition, transform.rotation, parentSpellObject); // Créée l'instance du sort à placer
+                activeSpell.SetActive(true);
+            }
         }
     }
 
