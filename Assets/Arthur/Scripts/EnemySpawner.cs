@@ -17,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        // Mise en place
         levelManager = GetComponent<LevelManager>();
         EnemyPool = new EnemyPool(defaultEnemy);
     }
@@ -24,30 +25,32 @@ public class EnemySpawner : MonoBehaviour
     // Démarre la séquence de spawn avec un délai initial
     public IEnumerator Spawn(Level level, float gracePeriod)
     {
+        // Rénitialisation des variables
         EnemiesRemaining = 0;
         pathEnumerator = 0;
         currentLevel = level;
 
+        // Compte le total des ennemis parmi toutes les vagues
         foreach (Wave wave in level.waves)
         {
             EnemiesRemaining += wave.enemyCount;
         }
 
         yield return new WaitForSeconds(gracePeriod); // Délai pour que le joueur se prépare
-        StartCoroutine(SpawnWaves());
+        StartCoroutine(SpawnWaves()); // Apparition des ennemis
     }
 
-    // Détruit tous les ennemis encore présents
+    // Ajoute tous les ennemis encore présents dans la scène à la pool
     public void DestroyAllEnemies()
     {
-        StopAllCoroutines();
+        StopAllCoroutines(); // Désactive tous les processus d'apparition d'ennemis
         foreach (Transform child in EnemyParentObject)
         {
             EnemyPool.ReturnEnemy(child.GetComponent<Enemy>());
         }
     }
 
-    // Gère le spawn des vagues d'ennemis
+    // Gère l'apparition des vagues d'ennemis
     private IEnumerator SpawnWaves()
     {
         foreach (Wave wave in currentLevel.waves)

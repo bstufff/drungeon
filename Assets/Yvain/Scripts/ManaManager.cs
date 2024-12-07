@@ -6,28 +6,30 @@ using TMPro;
 public class ManaManager : MonoBehaviour
 {
     public float maxMana;
-    public float currentMana;
+    public float CurrentMana;
     
-    [SerializeField] private Image manaBar;
-    [SerializeField] private TextMeshProUGUI manaText;
+    [SerializeField] private Image _manaBar;
+    [SerializeField] private TextMeshProUGUI _manaText;
     public void ManaUse(float manaCost)
     {
-        if (currentMana - manaCost > 0)
+        if (CurrentMana - manaCost > 0)
         {
-            currentMana -= manaCost;
+            CurrentMana -= manaCost;
             RefreshManaBar();
         }
     }
     public void RefreshManaBar()
     {
-        Mathf.Clamp(currentMana, 0, maxMana);
-        manaBar.fillAmount = currentMana / maxMana;
-        manaText.text = currentMana + "/" + maxMana;
+        // Met à jour la barre de mana et vérifie qu'elle ne dépasse pas les limites
+        Mathf.Clamp(CurrentMana, 0, maxMana);
+        _manaBar.fillAmount = CurrentMana / maxMana;
+        _manaText.text = CurrentMana + "/" + maxMana;
     }
     public void ResetMana(float maxMana)
     {
+        // Rénitialise la barre de mana
         this.maxMana = maxMana;
-        currentMana = maxMana;
+        CurrentMana = maxMana;
         RefreshManaBar();
     }
 }

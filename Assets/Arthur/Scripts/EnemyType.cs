@@ -1,4 +1,7 @@
 using UnityEngine;
+
+// Contient toutes les données qui définissent un type d'ennemi sous la forme d'un ScriptableObject
+
 [CreateAssetMenu(fileName = "Enemy", menuName = "ScriptableObjects/Enemy", order = 1)]
 public class EnemyType : ScriptableObject
 {

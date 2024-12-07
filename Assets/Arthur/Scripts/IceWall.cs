@@ -3,10 +3,12 @@ using UnityEngine;
 public class IceWall : Spell
 {
     [SerializeField] private float destroyTimer = 10f;
-    public override float ManaCost => 75;
+    public override float ManaCost => 75; // Définit le côut du sort
     public override void PlaceSpell(ManaManager manaManager)
     {
-        base.PlaceSpell(manaManager);
-        Destroy(gameObject, destroyTimer);
+        base.PlaceSpell(manaManager); // Comportement de base du sort
+
+        // Comportement unique au sort
+        Destroy(gameObject, destroyTimer); 
     }
 }

@@ -2,29 +2,32 @@ using UnityEngine;
 
 public class DragonAttack : MonoBehaviour
 {
-    private SpriteRenderer attackSprite;
     [SerializeField] private float _attackDamage;
-    private LevelManager levelManager;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private SpriteRenderer _attackSprite;
+    private LevelManager _levelManager;
+
     void Start()
     {
-        attackSprite = GetComponent<SpriteRenderer>();
-        levelManager = FindAnyObjectByType<LevelManager>();
+        // Initialisation 
+        _attackSprite = GetComponent<SpriteRenderer>();
+        _levelManager = FindAnyObjectByType<LevelManager>();
     }
     void Update()
     {
-        if (Input.GetMouseButton(0) && levelManager.IsIngame)
+        // Rend l'attaque visible quand LMB est maintenu
+        if (Input.GetMouseButton(0) && _levelManager.IsIngame)
         {
-            attackSprite.enabled = true;
+            _attackSprite.enabled = true;
         }
         else
         {
-            attackSprite.enabled = false;
+            _attackSprite.enabled = false;
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (attackSprite.enabled)
+        // Applique des dégats aux ennemis dans la zone de dommages si l'attaque est visible
+        if (_attackSprite.enabled)
         {
             collision.GetComponent<HealthManager>().TakeDamage(_attackDamage * Time.deltaTime);
         }

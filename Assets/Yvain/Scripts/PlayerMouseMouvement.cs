@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class PlayerMouseMouvement : MonoBehaviour
 {
-    bool started = false;
+    bool _started = false;
     public void Select()
     {
-        started = true;
+        _started = true;
     }
     void Update()
     {
-        if (started)
+        if (_started)
         {
             // Récupérer la position de la souris dans le monde
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

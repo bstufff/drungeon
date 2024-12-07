@@ -2,18 +2,19 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HealthManager : MonoBehaviour
 {
-    public Image healthBar;
+    [SerializeField] private Image healthBar;
     public float currentHealth;
 
     private float _maxHealth;
-    private LevelManager levelManager;
-    private EnemySpawner enemySpawner;
+    private LevelManager _levelManager;
+    private EnemySpawner _enemySpawner;
 
     private void Start()
     {
-        RefreshManaBar();
-        levelManager = FindAnyObjectByType<LevelManager>();
-        enemySpawner = FindAnyObjectByType<EnemySpawner>();
+        // Initialisation
+        RefreshHealthBar();
+        _levelManager = FindAnyObjectByType<LevelManager>();
+        _enemySpawner = FindAnyObjectByType<EnemySpawner>();
     }
 
     public float MaxHealth
@@ -21,14 +22,17 @@ public class HealthManager : MonoBehaviour
         get { return _maxHealth; }
         set
         {
+            // MaxHealth change uniquement si un ennemi est "transformé" en un autre,
+            // alors on en profite pour remettre en place les autres variables
             _maxHealth = value;
             currentHealth = value;
-            RefreshManaBar();
+            RefreshHealthBar();
         }
     }
 
-    public void RefreshManaBar()
+    public void RefreshHealthBar()
     {
+        // Fonction générale pour afficher et rafraichir la barre de vie
         if (healthBar == null)
         {
             healthBar = transform.Find("HealthBar").Find("Health").GetComponent<Image>();
@@ -39,29 +43,32 @@ public class HealthManager : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        // Applique les dégats à l'ennemi
         currentHealth -= damage;
-        RefreshManaBar();
+        RefreshHealthBar();
 
         if (currentHealth <= 0)
         {
             // Déclenche la séquence de victoire si cet ennemi est le dernier du niveau
-            if (enemySpawner.EnemiesRemaining == 1) 
+            if (_enemySpawner.EnemiesRemaining == 1) 
             {
-                levelManager.Win(); 
+                Debug.Log("youpla");
+                _levelManager.Win(); 
             }
             else
             {
-                enemySpawner.EnemiesRemaining--;
+                _enemySpawner.EnemiesRemaining--;
             }
 
             // Ajoute l'ennemi mort à la pool
-            enemySpawner.EnemyPool.ReturnEnemy(GetComponent<Enemy>());
+            _enemySpawner.EnemyPool.ReturnEnemy(GetComponent<Enemy>());
         }
     }
+    // Non utilisé dans le jeu, mais bon à avoir au cas où
     public void Heal(float healingAmount)
     {
         currentHealth += healingAmount;
-        RefreshManaBar();
+        RefreshHealthBar();
     }
     
 }

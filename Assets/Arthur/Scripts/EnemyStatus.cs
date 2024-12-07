@@ -5,11 +5,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 public abstract class EnemyStatus : MonoBehaviour 
 {
+    // Classe parent pour les statuts d'un ennemi
     public string StatusName;
     public bool isActive = false;
-    public abstract IEnumerator Effect(float delay, float value);
+    public abstract IEnumerator Effect(float delay, float value); 
 }
 
+
+// État causé par la zone de feu (FlameArea)
 public class BurningStatus : EnemyStatus
 {
     float damage = 10f;
@@ -21,13 +24,15 @@ public class BurningStatus : EnemyStatus
     }
     public override IEnumerator Effect(float delay, float value)
     {
-        while (isActive)
+        while (isActive) // Effectue des dégats uniquement si le sort est placé
         {
+            // Applique les dégats et crée un délai
             transform.GetComponent<HealthManager>().TakeDamage(value);
             yield return new WaitForSeconds(delay);
         }
     }
 }
+// État causé par le blizzard
 public class FreezingStatus : EnemyStatus
 {
     float damage = 5f;
@@ -39,8 +44,9 @@ public class FreezingStatus : EnemyStatus
     }
     public override IEnumerator Effect(float delay, float value)
     {
-        while (isActive)
+        while (isActive) // Effectue des dégats uniquement si le sort est placé
         {
+            // Applique les dégats et crée un délai
             transform.GetComponent<HealthManager>().TakeDamage(value);
             yield return new WaitForSeconds(delay);
         }

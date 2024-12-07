@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyMovement: {fileID: -3799285244100412281}
-  healthManager: {fileID: 8724651333202248111}
-  spriteRenderer: {fileID: -7892043713233904866}
-  boxCollider2D: {fileID: 2667089802343409310}
+  _healthManager: {fileID: 8724651333202248111}
+  _spriteRenderer: {fileID: -7892043713233904866}
+  _boxCollider2D: {fileID: 2667089802343409310}
 --- !u!114 &-3799285244100412281
 MonoBehaviour:
   m_ObjectHideFlags: 0

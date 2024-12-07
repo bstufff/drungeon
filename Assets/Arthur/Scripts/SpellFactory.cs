@@ -14,6 +14,7 @@ public class SpellFactory : MonoBehaviour
 {
     [SerializeField] private GameObject[] spellPrefabs;
 
+    // Place un sort dans le niveau
     public GameObject CreateSpell(SpellType spellType, Vector3 position, Transform parent)
     {
         GameObject spellPrefab = GetPrefab(spellType);
@@ -21,11 +22,13 @@ public class SpellFactory : MonoBehaviour
         return spellInstance;
     }
 
+    // Récupère le coût en mana
     public float GetManaCost(SpellType spellType)
     {
         return GetPrefab(spellType).GetComponent<Spell>().ManaCost;
     }
 
+    // Récupère le prefab du sort en fonction de son type
     private GameObject GetPrefab(SpellType spellType)
     {
         return spellType switch

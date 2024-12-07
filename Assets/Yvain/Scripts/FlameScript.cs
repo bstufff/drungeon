@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class FlameScript : Spell
 {
-    [SerializeField] private float destroyTimer = 10f;
+    [SerializeField] private float _destroyTimer = 10f;
     public override float ManaCost => 25;
     public override void PlaceSpell(ManaManager manaManager)
     {
-        base.PlaceSpell(manaManager);
-        Destroy(gameObject, destroyTimer);
+        base.PlaceSpell(manaManager); // Comportement de base du sort
+
+        // Comportement unique au sort
+        Destroy(gameObject, _destroyTimer);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
