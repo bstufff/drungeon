@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public List<Enemy> enemyPrototypes = new List<Enemy>(); // Liste des prototypes d'ennemis
+    public Enemy defaultEnemy; // Liste des prototypes d'ennemis
     public Transform EnemyParentObject;                    // Parent des ennemis dans la hiérarchie
     public int EnemiesRemaining = 0;
+    public EnemyPool EnemyPool;
 
     private int pathEnumerator = 0; // Pour alterner entre les chemins possibles
-
     private Level currentLevel;
     private LevelManager levelManager;
 
     private void Start()
     {
         levelManager = GetComponent<LevelManager>();
+        EnemyPool = new EnemyPool(defaultEnemy);
     }
 
     // Démarre la séquence de spawn avec un délai initial
@@ -40,7 +43,7 @@ public class EnemySpawner : MonoBehaviour
         StopAllCoroutines();
         foreach (Transform child in EnemyParentObject)
         {
-            Destroy(child.gameObject);
+            EnemyPool.ReturnEnemy(child.GetComponent<Enemy>());
         }
     }
 
@@ -63,23 +66,17 @@ public class EnemySpawner : MonoBehaviour
     }
 
     // Gère le spawn d'un ennemi à partir d'un prototype
-    private void SpawnEnemy(int enemyType)
+    private void SpawnEnemy(EnemyType enemyType)
     {
-        if (enemyType < 0 || enemyType >= enemyPrototypes.Count)
-        {
-            Debug.LogError("Type d'ennemi invalide !");
-            return;
-        }
+        Path currentPath = currentLevel.paths[pathEnumerator];
 
-        // Clone l'ennemi à partir du prototype
-        Enemy enemyInstance = enemyPrototypes[enemyType].Clone();
-        enemyInstance.transform.SetParent(EnemyParentObject);
+        Enemy enemy = EnemyPool.GetEnemy();
 
-        // Assigner un chemin au nouvel ennemi
-        int pathCount = currentLevel.paths.Count;
-        enemyInstance.path = currentLevel.paths[pathEnumerator];
+        enemy.Initialize(enemyType);
+        enemy.EnemyMovement.Initialize(currentPath.path);
+        enemy.transform.SetParent(EnemyParentObject);
 
         // Alterner entre les chemins
-        pathEnumerator = (pathEnumerator + 1) % pathCount;
+        pathEnumerator = (pathEnumerator + 1) % currentLevel.paths.Count;
     }
 }

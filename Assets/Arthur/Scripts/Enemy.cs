@@ -1,37 +1,20 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IPrototype<Enemy>
+public class Enemy : MonoBehaviour //, IPrototype<Enemy>
 {
-    public float speed = 10; // Vitesse actuelle
-    public float baseSpeed;  // Vitesse de base
+    public EnemyMovement EnemyMovement;
+    [SerializeField] HealthManager healthManager; 
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] BoxCollider2D boxCollider2D;
 
-    public Path path;        // Référence au chemin suivi
-
-    // Méthode d'initialisation pour remplacer le constructeur
-    public void Initialize(float speed, Path path)
+    public void Initialize(EnemyType type)
     {
-        this.speed = speed;
-        this.path = path;
-        this.baseSpeed = speed;
+        transform.localScale = new Vector3(type.scale, type.scale, type.scale);
+        EnemyMovement.BaseSpeed = type.speed;
+        healthManager.MaxHealth = type.maxHealth;
+        healthManager.Heal(type.maxHealth);
+        spriteRenderer.sprite = type.sprite;
+        boxCollider2D.size = type.colliderBounds;
     }
 
-    // Implémentation du clonage
-    public Enemy Clone()
-    {
-        // Créer une nouvelle instance d'Enemy en clonant l'objet
-        Enemy clonedEnemy = Instantiate(this);
-        clonedEnemy.Initialize(this.speed, this.path);
-        return clonedEnemy;
-    }
-
-    private void Start()
-    {
-        // Assigner la vitesse de base si elle n'est pas déjà définie
-        if (baseSpeed == 0)
-            baseSpeed = speed;
-    }
-}
-public interface IPrototype<T>
-{
-    T Clone();
 }

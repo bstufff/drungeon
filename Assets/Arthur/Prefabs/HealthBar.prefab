@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4483711274490013452}
   - component: {fileID: 4147344396715890094}
   - component: {fileID: 2523674518393187249}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 594897191
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &4147344396715890094
@@ -86,7 +86,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &2523674518393187249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 1595073153940524750}
   - component: {fileID: 3852977991282558577}
   - component: {fileID: 3593160720038696232}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 8021050702730423388}
   - component: {fileID: 6019298719762795340}
   - component: {fileID: 2893840161419567902}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 3657507675375006287}
   - component: {fileID: 6434032553614618634}
   - component: {fileID: 2090014358329937561}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}

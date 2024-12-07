@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class CanonScript : Spell
 {
@@ -9,6 +10,7 @@ public class CanonScript : Spell
     public float fireInterval = 2f; // Intervalle entre chaque tir
     public float cannonballForce = 500f; // Force appliquée au boulet de canon
 
+    private GameObject enemyParentObject;
     private float fireTimer = 0f;
     [SerializeField] private float destroyTimer = 10f;
 
@@ -17,6 +19,7 @@ public class CanonScript : Spell
     public override void PlaceSpell(ManaManager manaManager)
     {
         base.PlaceSpell(manaManager);
+        enemyParentObject = FindAnyObjectByType<EnemySpawner>().EnemyParentObject.gameObject;
         Destroy(gameObject, destroyTimer);
     }
     private void Update()
@@ -35,20 +38,32 @@ public class CanonScript : Spell
 
     private GameObject FindClosestEnemy()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closestEnemy = null;
-        float closestDistance = Mathf.Infinity;
-
-        foreach (GameObject enemy in enemies)
+        Transform[] enemyTransforms = enemyParentObject.GetComponentsInChildren<Transform>();
+        if (enemyTransforms.Length > 1)
         {
-            float distance = Vector2.Distance(transform.position, enemy.transform.position);
-            if (distance < closestDistance)
+            GameObject closestEnemy = null;
+            float closestDistance = Mathf.Infinity;
+
+            foreach (Transform enemyTransform in enemyTransforms)
             {
-                closestDistance = distance;
-                closestEnemy = enemy;
+                if (enemyTransform.gameObject == enemyParentObject)
+                    continue; // Skips the parent transform as it is not an enemy
+
+                if (enemyTransform.gameObject.activeSelf && enemyTransform.CompareTag("Enemy"))
+                {
+                    float distance = Vector2.Distance(transform.position, enemyTransform.position);
+                    if (distance < closestDistance)
+                    {
+                        closestDistance = distance;
+                        closestEnemy = enemyTransform.gameObject;
+                    }
+                }
+
             }
+
+            return closestEnemy;
         }
-        return closestEnemy;
+        return null;
     }
 
     private void RotateTowardsTarget(Transform target)

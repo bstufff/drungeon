@@ -31,15 +31,13 @@ public class MinionScript : Spell
     private void Update()
     {
         if (minionCollider.isActiveAndEnabled)
-        {
             if (target == null)
-            {
                 FindClosestEnemy();
-            }
-            {
-                MoveTowardsTarget();
-            }
-        }
+            else
+                if (target.activeSelf && target.CompareTag("Enemy"))
+                    MoveTowardsTarget();
+                else
+                    target = null;
     }
 
     private void FindClosestEnemy()
@@ -55,12 +53,16 @@ public class MinionScript : Spell
                 if (enemyTransform.gameObject == enemyParentObject)
                     continue; // Skips the parent transform as it is not an enemy
 
-                float distance = Vector2.Distance(transform.position, enemyTransform.position);
-                if (distance < closestDistance)
+                if (enemyTransform.gameObject.activeSelf && enemyTransform.CompareTag("Enemy"))
                 {
-                    closestDistance = distance;
-                    closestEnemy = enemyTransform.gameObject;
+                    float distance = Vector2.Distance(transform.position, enemyTransform.position);
+                    if (distance < closestDistance)
+                    {
+                        closestDistance = distance;
+                        closestEnemy = enemyTransform.gameObject;
+                    }
                 }
+
             }
 
             target = closestEnemy;

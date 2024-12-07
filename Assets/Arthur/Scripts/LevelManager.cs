@@ -63,5 +63,8 @@ public class LevelManager : MonoBehaviour
         StartLevel(lastLevelPlayed + 1);
     }
 
-
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

@@ -6,42 +6,60 @@ using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public int targetIndex = 0;
-    private Enemy enemyComponentReference;
-    private List<Transform> path;
+    public List<Transform> path;
+    
+    private float _baseSpeed;
+    private float _currentSpeed;
+    private int targetIndex = 0;
     private LevelManager levelManager;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Awake()
     {
-        enemyComponentReference = GetComponent<Enemy>();
-        path = enemyComponentReference.path.path;//Gets the path to follow from the Enemy Component
-        transform.position = path[targetIndex].position;//Teleports to the start of the path
         levelManager = FindAnyObjectByType<LevelManager>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (levelManager.IsIngame)
         {
             if (transform.position == path[targetIndex].position)
             {
-                //Debug.Log("target " + targetIndex + " reached");
-                targetIndex++;//When the enemy reaches its target, it changes its target to be the next one on the path.
+                targetIndex++;
                 if (targetIndex >= path.Count)
                 {
-                    GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().Lose();//when reaching the end, calls the lose method in LevelManager and destroys the enemy
-                    Destroy(gameObject);
+                    levelManager.Lose(); 
                 }
             }
             else
             {
-                float speed = enemyComponentReference.speed;
-                transform.position = Vector3.MoveTowards(transform.position, path[targetIndex].position, speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, path[targetIndex].position, CurrentSpeed * Time.deltaTime);
             }
         }
 
+    }
+
+    public float CurrentSpeed
+    {
+        get { return _currentSpeed; }
+        set {  
+            _currentSpeed = value;
+        }
+    }
+
+    public float BaseSpeed
+    { 
+        get { return _baseSpeed; }
+        set {
+            _currentSpeed = value;
+            _baseSpeed = value;
+        }
+    
+    }
+
+    public void Initialize(List<Transform> path)
+    {
+        this.path = path;
+        targetIndex = 0;
+        transform.position = path[0].position; //Teleports to the start of the path
     }
 
 }

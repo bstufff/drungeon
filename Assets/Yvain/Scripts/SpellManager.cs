@@ -3,28 +3,26 @@ using UnityEngine;
 public class SpellManager : MonoBehaviour
 {
     [SerializeField] private Transform parentSpellObject;
-    [SerializeField] private GameObject[] spells;
+    [SerializeField] private SpellFactory spellFactory;
+    [SerializeField] private ManaManager manager;
     private GameObject activeSpell; // Sort actuellement en train d'être placé
-    private ManaManager manager;
-    
     public void UseSpell(int spellIndex)
     {
-        manager = FindAnyObjectByType<ManaManager>();
         if (activeSpell == null) // Si aucun sort est en train d'être placé
         {
-            float activeSpellCost = spells[spellIndex].GetComponent<Spell>().ManaCost;
-            if (manager.currentMana <= activeSpellCost)
+            SpellType spellType = (SpellType)spellIndex;
+            float manaCost = spellFactory.GetManaCost(spellType);
+            if (manager.currentMana <= manaCost)
             {
                 Debug.Log("Not enough mana !");
-
                 return; // Exit early
             }
-            else
-            {
-                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                activeSpell = Instantiate(spells[spellIndex].gameObject, mousePosition, transform.rotation, parentSpellObject); // Créée l'instance du sort à placer
-                activeSpell.SetActive(true);
-            }
+
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0;
+
+            activeSpell = spellFactory.CreateSpell(spellType, mousePosition, parentSpellObject);
+            activeSpell.SetActive(true);
         }
     }
 
@@ -43,6 +41,7 @@ public class SpellManager : MonoBehaviour
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = -5;
             activeSpell.transform.position = mousePosition;
+
             if (Input.GetMouseButtonDown(0))
             {
                 activeSpell.GetComponent<Spell>().PlaceSpell(manager);
@@ -51,18 +50,9 @@ public class SpellManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 Destroy(activeSpell);
+                activeSpell = null;
             }
         }
 
-    }
-}
-public class Spell : MonoBehaviour
-{
-    public virtual float ManaCost { get; } = 10f; // Default mana cost
-    public virtual void PlaceSpell(ManaManager manaManager)
-    {
-        // Base behavior that is used by every spell
-        GetComponent<Collider2D>().enabled = true;
-        manaManager.ManaUse(ManaCost);
     }
 }

@@ -4,37 +4,64 @@ public class HealthManager : MonoBehaviour
 {
     public Image healthBar;
     public float currentHealth;
-    public float maxHealth;
+
+    private float _maxHealth;
     private LevelManager levelManager;
     private EnemySpawner enemySpawner;
+
     private void Start()
     {
-        healthBar = transform.Find("HealthBar").Find("Health").GetComponent<Image>();
+        RefreshManaBar();
         levelManager = FindAnyObjectByType<LevelManager>();
         enemySpawner = FindAnyObjectByType<EnemySpawner>();
     }
+
+    public float MaxHealth
+    {
+        get { return _maxHealth; }
+        set
+        {
+            _maxHealth = value;
+            currentHealth = value;
+            RefreshManaBar();
+        }
+    }
+
+    public void RefreshManaBar()
+    {
+        if (healthBar == null)
+        {
+            healthBar = transform.Find("HealthBar").Find("Health").GetComponent<Image>();
+        }
+        currentHealth = Mathf.Clamp(currentHealth, 0, MaxHealth);
+        healthBar.fillAmount = currentHealth / MaxHealth;
+    }
+
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        healthBar.fillAmount = currentHealth / maxHealth;
+        RefreshManaBar();
+
         if (currentHealth <= 0)
         {
-            if (enemySpawner.EnemiesRemaining == 1) // Si cet ennemi est le dernier du niveau
+            // Déclenche la séquence de victoire si cet ennemi est le dernier du niveau
+            if (enemySpawner.EnemiesRemaining == 1) 
             {
-                levelManager.Win(); // Déclenche la séquence de victoire
+                levelManager.Win(); 
             }
             else
             {
                 enemySpawner.EnemiesRemaining--;
             }
-            Destroy(gameObject);
+
+            // Ajoute l'ennemi mort à la pool
+            enemySpawner.EnemyPool.ReturnEnemy(GetComponent<Enemy>());
         }
     }
     public void Heal(float healingAmount)
     {
         currentHealth += healingAmount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        healthBar.fillAmount = currentHealth / maxHealth;
+        RefreshManaBar();
     }
+    
 }
