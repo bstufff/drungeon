@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class SpellManager : MonoBehaviour
     [SerializeField] private SpellFactory _spellFactory;
     [SerializeField] private ManaManager _manager;
     [SerializeField] private GameObject[] _spellButtons;
-    private GameObject[] _spellSelection; 
+    [SerializeField] private GameObject[] _spellSelection; 
     private GameObject activeSpell; // Sort actuellement en train d'être placé
 
     void Update()
@@ -68,36 +69,57 @@ public class SpellManager : MonoBehaviour
         }
     }
 
+    public void SelectSpell(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                _spellSelection[0] = _spellButtons[index];
+                _spellButtons[index].SetActive(true);
+                _spellButtons[index + 1].SetActive(false);
+                break;
+            case 1:
+                _spellSelection[0] = _spellButtons[index];
+                _spellButtons[index].SetActive(true);
+                _spellButtons[index - 1].SetActive(false);
+                break;
+            case 2:
+                _spellSelection[1] = _spellButtons[index];
+                _spellButtons[index].SetActive(true);
+                _spellButtons[index + 1].SetActive(false);
+                break;
+            case 3:
+                _spellSelection[1] = _spellButtons[index];
+                _spellButtons[index].SetActive(true);
+                _spellButtons[index - 1].SetActive(false);
+                break;
+            case 4:
+                _spellSelection[2] = _spellButtons[index];
+                _spellButtons[index].SetActive(true);
+                _spellButtons[index + 1].SetActive(false);
+                break;
+            case 5:
+                _spellSelection[2] = _spellButtons[index];
+                _spellButtons[index].SetActive(true);
+                _spellButtons[index - 1].SetActive(false);
+                break;
+
+        }
+
+    }
+
     public GameObject[] SpellSelection {
         get {
-            // Utilise une liste temporaire pour stocker les boutons
-            List<GameObject> interactableButtons = new List<GameObject>();
-
-            foreach (GameObject obj in _spellButtons)
-            {
-                // Vérifie que l'objet est un bouton
-                Button button = obj.GetComponent<Button>();
-                if (button != null & !button.interactable)
-                {
-                    // Ajoute à la liste les boutons avec qui on peut interagir
-                    interactableButtons.Add(obj);
-                }
-            }
-
-            // Retourne la liste convertie en tableau
-            return interactableButtons.ToArray();
+            return _spellSelection;
         }
         set
         {
-            foreach (GameObject button in _spellButtons)
+            
+            foreach (var item in value)
             {
-                if (Array.Exists(_spellButtons, obj => obj == button))
-                {
-                    button.SetActive(true);
-                }
-                _spellSelection = value;
-
+                SelectSpell(Array.IndexOf(_spellButtons, item));
             }
+            
         }
     }
 

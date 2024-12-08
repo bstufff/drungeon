@@ -4827,29 +4827,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1709962192283622169}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1454754699}
+        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
+        m_MethodName: SelectSpell
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9172180504389875244}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &3761367864346744730 stripped
 GameObject:
@@ -5925,29 +5913,45 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7555204329518765417, guid: 19c17a58fbb3c9944a1c2cb893233bd6, type: 3}
+      propertyPath: _spellSelection.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555204329518765417, guid: 19c17a58fbb3c9944a1c2cb893233bd6, type: 3}
       propertyPath: '_spellButtons.Array.data[0]'
       value: 
-      objectReference: {fileID: 4503013205617450709}
+      objectReference: {fileID: 2964406728557649253}
     - target: {fileID: 7555204329518765417, guid: 19c17a58fbb3c9944a1c2cb893233bd6, type: 3}
       propertyPath: '_spellButtons.Array.data[1]'
       value: 
-      objectReference: {fileID: 6480648793556223229}
+      objectReference: {fileID: 6090802983798114805}
     - target: {fileID: 7555204329518765417, guid: 19c17a58fbb3c9944a1c2cb893233bd6, type: 3}
       propertyPath: '_spellButtons.Array.data[2]'
       value: 
-      objectReference: {fileID: 7523470297134877675}
+      objectReference: {fileID: 9172180504389875244}
     - target: {fileID: 7555204329518765417, guid: 19c17a58fbb3c9944a1c2cb893233bd6, type: 3}
       propertyPath: '_spellButtons.Array.data[3]'
       value: 
-      objectReference: {fileID: 1694271747982511887}
+      objectReference: {fileID: 1709962192283622169}
     - target: {fileID: 7555204329518765417, guid: 19c17a58fbb3c9944a1c2cb893233bd6, type: 3}
       propertyPath: '_spellButtons.Array.data[4]'
       value: 
-      objectReference: {fileID: 1410164847931632317}
+      objectReference: {fileID: 7867936921551150203}
     - target: {fileID: 7555204329518765417, guid: 19c17a58fbb3c9944a1c2cb893233bd6, type: 3}
       propertyPath: '_spellButtons.Array.data[5]'
       value: 
-      objectReference: {fileID: 6157492128519868057}
+      objectReference: {fileID: 6785586131074986516}
+    - target: {fileID: 7555204329518765417, guid: 19c17a58fbb3c9944a1c2cb893233bd6, type: 3}
+      propertyPath: '_spellSelection.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6090802983798114805}
+    - target: {fileID: 7555204329518765417, guid: 19c17a58fbb3c9944a1c2cb893233bd6, type: 3}
+      propertyPath: '_spellSelection.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1709962192283622169}
+    - target: {fileID: 7555204329518765417, guid: 19c17a58fbb3c9944a1c2cb893233bd6, type: 3}
+      propertyPath: '_spellSelection.Array.data[2]'
+      value: 
+      objectReference: {fileID: 6785586131074986516}
     - target: {fileID: 8367877657887632113, guid: 19c17a58fbb3c9944a1c2cb893233bd6, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -7009,26 +7013,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7867936921551150203}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1454754699}
+        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
+        m_MethodName: SelectSpell
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6785586131074986516}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -7371,22 +7363,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 6090802983798114805}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2964406728557649253}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1454754699}
+        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
+        m_MethodName: SelectSpell
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8036,29 +8016,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 6090802983798114805}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1454754699}
+        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
+        m_MethodName: SelectSpell
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2964406728557649253}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &7766971049531073515
 MonoBehaviour:
@@ -8812,26 +8780,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 7867936921551150203}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1454754699}
+        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
+        m_MethodName: SelectSpell
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 6785586131074986516}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9204,26 +9160,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1709962192283622169}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1454754699}
+        m_TargetAssemblyTypeName: SpellManager, Assembly-CSharp
+        m_MethodName: SelectSpell
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 9172180504389875244}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1

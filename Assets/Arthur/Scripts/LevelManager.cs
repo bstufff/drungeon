@@ -35,6 +35,8 @@ public class LevelManager : MonoBehaviour
         SaveData save = new SaveData();
         save.SelectedDragon = FindAnyObjectByType<DragonSelector>().SelectedDragon;
         save.SelectedSpells = _spellManager.SpellSelection;
+        foreach (GameObject obj in save.SelectedSpells)
+            Debug.Log(obj.name);
         save.LevelProgressionIndex = _lastLevelPlayed;
         _saveManager.SaveGame(save);
     }
@@ -75,11 +77,15 @@ public class LevelManager : MonoBehaviour
         SaveData loadedData = _saveManager.LoadGame();
         if (loadedData != null)
         {
+            _lastLevelPlayed = loadedData.LevelProgressionIndex;
+            RetryPreviousLevel();
             FindAnyObjectByType<DragonSelector>().SetSelectedDragon(loadedData.SelectedDragon);
             _spellManager.SpellSelection = loadedData.SelectedSpells;
-            _lastLevelPlayed = loadedData.LevelProgressionIndex;
-            _levels[0].LevelPrefab.SetActive(false);
-            RetryPreviousLevel();
+            foreach (GameObject obj in loadedData.SelectedSpells)
+                Debug.Log(obj.name);
+            if (loadedData.LevelProgressionIndex != 0)
+                _levels[0].LevelPrefab.SetActive(false);
+
         }
     }
 
