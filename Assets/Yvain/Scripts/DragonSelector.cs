@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using static UnityEditor.Rendering.InspectorCurveEditor;
 
 public class DragonSelector : MonoBehaviour
 {
@@ -22,13 +23,17 @@ public class DragonSelector : MonoBehaviour
         get { return _selectedDragon; } 
         set {
             // Fait en sorte que l'index boucle quand il sort des limites du tableau
-            if (_selectedDragon < 0)
+            if (value < 0)
             {
                 _selectedDragon = 2;
             }
-            else if (_selectedDragon > 2)
+            else if (value > 2)
             {
                 _selectedDragon = 0;
+            }
+            else
+            {
+                _selectedDragon = value;
             }
         }
     }
@@ -38,8 +43,16 @@ public class DragonSelector : MonoBehaviour
     {
         _dragons[_selectedDragon].SetActive(false);
 
-        SelectedDragon += selection;
-        
+        SelectedDragon = _selectedDragon + selection;
+
+        _dragons[_selectedDragon].SetActive(true);
+    }
+    public void SetSelectedDragon(int selection) 
+    {
+        _dragons[_selectedDragon].SetActive(false);
+
+        SelectedDragon = selection;
+
         _dragons[_selectedDragon].SetActive(true);
     }
 }

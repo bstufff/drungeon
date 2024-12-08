@@ -13,9 +13,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private ManaManager _manaManager;
     [SerializeField] private SpellManager _spellManager;
     [SerializeField] private EnemySpawner _enemySpawner;
+    [SerializeField] private SaveManager _saveManager;
 
     private int lastLevelPlayed = 0;
-
     public void StartLevel(int levelIndex)
     {
         // Mise en place du niveau
@@ -32,6 +32,11 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(_enemySpawner.Spawn(level, 3));
 
         IsIngame = true;
+        SaveData save = new SaveData();
+        save.SelectedDragon = FindAnyObjectByType<DragonSelector>().SelectedDragon;
+        save.SelectedSpells = _spellManager.SpellSelection;
+        save.LevelProgressionIndex = lastLevelPlayed;
+        _saveManager.SaveGame(save);
     }
     public void ResetLevelElements()
     {
@@ -40,7 +45,7 @@ public class LevelManager : MonoBehaviour
         _enemySpawner.DestroyAllEnemies();
         IsIngame = false;
     }
-    public void Lose() 
+    public void Lose()
     {
         _gameOverScreen.SetActive(true);
         ResetLevelElements();
@@ -65,9 +70,25 @@ public class LevelManager : MonoBehaviour
         StartLevel(lastLevelPlayed + 1);
     }
 
+    public void Continue()
+    {
+        SaveData loadedData = _saveManager.LoadGame();
+        if (loadedData != null)
+        {
+            FindAnyObjectByType<DragonSelector>().SetSelectedDragon(loadedData.SelectedDragon);
+            _spellManager.SpellSelection = loadedData.SelectedSpells;
+            lastLevelPlayed = loadedData.LevelProgressionIndex;
+            _levels[0].levelPrefab.SetActive(false);
+            RetryPreviousLevel();
+        }
+    }
+
+
     public void Quit()
     {
         // Cette méthode fonctionne uniquement dans un build et pas dans l'éditeur
         Application.Quit();
     }
+
 }
+

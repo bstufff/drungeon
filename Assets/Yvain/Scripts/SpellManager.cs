@@ -1,10 +1,15 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpellManager : MonoBehaviour
 {
     [SerializeField] private Transform _parentSpellObject;
     [SerializeField] private SpellFactory _spellFactory;
     [SerializeField] private ManaManager _manager;
+    [SerializeField] private GameObject[] _spellButtons;
+    private GameObject[] _spellSelection; 
     private GameObject activeSpell; // Sort actuellement en train d'être placé
 
     void Update()
@@ -59,6 +64,58 @@ public class SpellManager : MonoBehaviour
         {
             Destroy(spell.gameObject);
         }
+    }
+
+    public GameObject[] SpellSelection {
+        get {
+            // Utilise une liste temporaire pour stocker les boutons
+            List<GameObject> interactableButtons = new List<GameObject>();
+
+            foreach (GameObject obj in _spellButtons)
+            {
+                // Vérifie que l'objet est un bouton
+                Button button = obj.GetComponent<Button>();
+                if (button != null & !button.interactable)
+                {
+                    // Ajoute à la liste les boutons avec qui on peut interagir
+                    interactableButtons.Add(obj);
+                }
+            }
+
+            // Retourne la liste convertie en tableau
+            return interactableButtons.ToArray();
+        }
+        set
+        {
+            foreach (GameObject button in _spellButtons)
+            {
+                if (Array.Exists(_spellButtons, obj => obj == button))
+                {
+                    button.SetActive(true);
+                }
+                _spellSelection = value;
+
+            }
+        }
+    }
+    public GameObject[] GetSpellSelection()
+    {
+        // Utilise une liste temporaire pour stocker les boutons
+        List<GameObject> interactableButtons = new List<GameObject>();
+
+        foreach (GameObject obj in _spellButtons)
+        {
+            // Vérifie que l'objet est un bouton
+            Button button = obj.GetComponent<Button>();
+            if (button != null &! button.interactable)
+            {
+                // Ajoute à la liste les boutons avec qui on peut interagir
+                interactableButtons.Add(obj);
+            }
+        }
+
+        // Retourne la liste convertie en tableau
+        return interactableButtons.ToArray();
     }
 
 }
