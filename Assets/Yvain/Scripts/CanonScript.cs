@@ -29,7 +29,7 @@ public class CanonScript : Spell
         }
     }
 
-    public override float ManaCost => 50; // Définit le côut du sort
+    public override float ManaCost => 75; // Définit le côut du sort
 
     public override void PlaceSpell(ManaManager manaManager)
     {

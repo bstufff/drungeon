@@ -6,10 +6,10 @@ using UnityEngine;
 [Serializable]
 public class Level
 {
-    public string levelName;
-    public GameObject levelPrefab;
-    public int manaAvailable;
-    public List<Path> paths;
-    public List<Wave> waves;
-    public float zoom;
+    public string LevelName;
+    public GameObject LevelPrefab;
+    public int ManaAvailable;
+    public List<Path> Paths;
+    public List<Wave> Waves;
+    public float Zoom;
 }

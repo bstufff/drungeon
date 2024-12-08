@@ -6,20 +6,20 @@ using UnityEngine.UIElements;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public Enemy defaultEnemy; // Liste des prototypes d'ennemis
+    public Enemy DefaultEnemy; // Liste des prototypes d'ennemis
     public Transform EnemyParentObject;                    // Parent des ennemis dans la hiérarchie
     public int EnemiesRemaining = 0;
     public EnemyPool EnemyPool;
 
-    private int pathEnumerator = 0; // Pour alterner entre les chemins possibles
-    private Level currentLevel;
-    private LevelManager levelManager;
+    private int _pathEnumerator = 0; // Pour alterner entre les chemins possibles
+    private Level _currentLevel;
+    private LevelManager _levelManager;
 
     private void Start()
     {
         // Mise en place
-        levelManager = GetComponent<LevelManager>();
-        EnemyPool = new EnemyPool(defaultEnemy);
+        _levelManager = GetComponent<LevelManager>();
+        EnemyPool = new EnemyPool(DefaultEnemy);
     }
 
     // Démarre la séquence de spawn avec un délai initial
@@ -27,13 +27,13 @@ public class EnemySpawner : MonoBehaviour
     {
         // Rénitialisation des variables
         EnemiesRemaining = 0;
-        pathEnumerator = 0;
-        currentLevel = level;
+        _pathEnumerator = 0;
+        _currentLevel = level;
 
         // Compte le total des ennemis parmi toutes les vagues
-        foreach (Wave wave in level.waves)
+        foreach (Wave wave in level.Waves)
         {
-            EnemiesRemaining += wave.enemyCount;
+            EnemiesRemaining += wave.EnemyCount;
         }
 
         yield return new WaitForSeconds(gracePeriod); // Délai pour que le joueur se prépare
@@ -53,17 +53,17 @@ public class EnemySpawner : MonoBehaviour
     // Gère l'apparition des vagues d'ennemis
     private IEnumerator SpawnWaves()
     {
-        foreach (Wave wave in currentLevel.waves)
+        foreach (Wave wave in _currentLevel.Waves)
         {
-            for (int i = 0; i < wave.enemyCount; i++)
+            for (int i = 0; i < wave.EnemyCount; i++)
             {
-                if (!levelManager.IsIngame)
+                if (!_levelManager.IsIngame)
                 {
                     yield break;
                 }
 
-                SpawnEnemy(wave.enemyType); // Utilise un type pour chercher un prototype
-                yield return new WaitForSeconds(wave.spawnRate);
+                SpawnEnemy(wave.EnemyType); // Utilise un type pour chercher un prototype
+                yield return new WaitForSeconds(wave.SpawnRate);
             }
         }
     }
@@ -71,7 +71,7 @@ public class EnemySpawner : MonoBehaviour
     // Gère le spawn d'un ennemi à partir d'un prototype
     private void SpawnEnemy(EnemyType enemyType)
     {
-        Path currentPath = currentLevel.paths[pathEnumerator];
+        Path currentPath = _currentLevel.Paths[_pathEnumerator];
 
         Enemy enemy = EnemyPool.GetEnemy();
 
@@ -80,6 +80,6 @@ public class EnemySpawner : MonoBehaviour
         enemy.transform.SetParent(EnemyParentObject);
 
         // Alterner entre les chemins
-        pathEnumerator = (pathEnumerator + 1) % currentLevel.paths.Count;
+        _pathEnumerator = (_pathEnumerator + 1) % _currentLevel.Paths.Count;
     }
 }

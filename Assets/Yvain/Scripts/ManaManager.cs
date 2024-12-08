@@ -5,7 +5,7 @@ using TMPro;
 
 public class ManaManager : MonoBehaviour
 {
-    public float maxMana;
+    public float MaxMana;
     public float CurrentMana;
     
     [SerializeField] private Image _manaBar;
@@ -21,14 +21,14 @@ public class ManaManager : MonoBehaviour
     public void RefreshManaBar()
     {
         // Met à jour la barre de mana et vérifie qu'elle ne dépasse pas les limites
-        Mathf.Clamp(CurrentMana, 0, maxMana);
-        _manaBar.fillAmount = CurrentMana / maxMana;
-        _manaText.text = CurrentMana + "/" + maxMana;
+        Mathf.Clamp(CurrentMana, 0, MaxMana);
+        _manaBar.fillAmount = CurrentMana / MaxMana;
+        _manaText.text = CurrentMana + "/" + MaxMana;
     }
     public void ResetMana(float maxMana)
     {
         // Rénitialise la barre de mana
-        this.maxMana = maxMana;
+        this.MaxMana = maxMana;
         CurrentMana = maxMana;
         RefreshManaBar();
     }

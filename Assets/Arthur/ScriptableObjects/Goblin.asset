@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 377941755694a844384d044db844c7ed, type: 3}
   m_Name: Goblin
   m_EditorClassIdentifier: 
-  scale: 0.5
-  speed: 2
-  maxHealth: 25
-  sprite: {fileID: 3308487660265201465, guid: 430983be71f57494f8786922f7032edc, type: 3}
-  colliderBounds: {x: 0.9375, y: 1}
+  Scale: 0.5
+  Speed: 2
+  MaxHealth: 25
+  Sprite: {fileID: 3308487660265201465, guid: 430983be71f57494f8786922f7032edc, type: 3}
+  ColliderBounds: {x: 1, y: 1}

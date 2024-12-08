@@ -15,19 +15,19 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private EnemySpawner _enemySpawner;
     [SerializeField] private SaveManager _saveManager;
 
-    private int lastLevelPlayed = 0;
+    private int _lastLevelPlayed = 0;
     public void StartLevel(int levelIndex)
     {
         // Mise en place du niveau
-        lastLevelPlayed = levelIndex;
+        _lastLevelPlayed = levelIndex;
         Level level = _levels[levelIndex];
-        level.levelPrefab.SetActive(true);
+        level.LevelPrefab.SetActive(true);
 
-        Camera.main.orthographicSize = level.zoom;
+        Camera.main.orthographicSize = level.Zoom;
 
         _spellManager.DestroyAllSpells();
 
-        _manaManager.ResetMana(level.manaAvailable);
+        _manaManager.ResetMana(level.ManaAvailable);
 
         StartCoroutine(_enemySpawner.Spawn(level, 3));
 
@@ -35,7 +35,7 @@ public class LevelManager : MonoBehaviour
         SaveData save = new SaveData();
         save.SelectedDragon = FindAnyObjectByType<DragonSelector>().SelectedDragon;
         save.SelectedSpells = _spellManager.SpellSelection;
-        save.LevelProgressionIndex = lastLevelPlayed;
+        save.LevelProgressionIndex = _lastLevelPlayed;
         _saveManager.SaveGame(save);
     }
     public void ResetLevelElements()
@@ -57,17 +57,17 @@ public class LevelManager : MonoBehaviour
     }
     public void RetryPreviousLevel()
     {
-        StartLevel(lastLevelPlayed);
+        StartLevel(_lastLevelPlayed);
     }
     public void StartNextLevel()
     {
-        if (lastLevelPlayed + 1 > _levels.Count)
+        if (_lastLevelPlayed + 1 > _levels.Count)
         {
             Debug.Log("There are no more levels !");
             return;
         }
-        _levels[lastLevelPlayed].levelPrefab.SetActive(false);
-        StartLevel(lastLevelPlayed + 1);
+        _levels[_lastLevelPlayed].LevelPrefab.SetActive(false);
+        StartLevel(_lastLevelPlayed + 1);
     }
 
     public void Continue()
@@ -77,8 +77,8 @@ public class LevelManager : MonoBehaviour
         {
             FindAnyObjectByType<DragonSelector>().SetSelectedDragon(loadedData.SelectedDragon);
             _spellManager.SpellSelection = loadedData.SelectedSpells;
-            lastLevelPlayed = loadedData.LevelProgressionIndex;
-            _levels[0].levelPrefab.SetActive(false);
+            _lastLevelPlayed = loadedData.LevelProgressionIndex;
+            _levels[0].LevelPrefab.SetActive(false);
             RetryPreviousLevel();
         }
     }

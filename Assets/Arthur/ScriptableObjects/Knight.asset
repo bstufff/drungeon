@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 377941755694a844384d044db844c7ed, type: 3}
   m_Name: Knight
   m_EditorClassIdentifier: 
-  scale: 1
-  speed: 0.5
-  maxHealth: 75
-  sprite: {fileID: -7025996284819687394, guid: fb68442c127df8944b2b96e38bcf327b, type: 3}
-  colliderBounds: {x: 0.84375, y: 0.9375}
+  Scale: 1
+  Speed: 0.5
+  MaxHealth: 75
+  Sprite: {fileID: -7025996284819687394, guid: fb68442c127df8944b2b96e38bcf327b, type: 3}
+  ColliderBounds: {x: 1, y: 1}

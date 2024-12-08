@@ -11,11 +11,11 @@ public class Enemy : MonoBehaviour //, IPrototype<Enemy>
     public void Initialize(EnemyType type)
     {
         // Permet à n'importe quel ennemi de devenir n'importe quel autre ennemi 
-        transform.localScale = new Vector3(type.scale, type.scale, type.scale);
-        EnemyMovement.BaseSpeed = type.speed;
-        _healthManager.MaxHealth = type.maxHealth;
-        _spriteRenderer.sprite = type.sprite;
-        _boxCollider2D.size = type.colliderBounds;
+        transform.localScale = new Vector3(type.Scale, type.Scale, type.Scale);
+        EnemyMovement.BaseSpeed = type.Speed;
+        _healthManager.MaxHealth = type.MaxHealth;
+        _spriteRenderer.sprite = type.Sprite;
+        _boxCollider2D.size = type.ColliderBounds;
     }
 
 }

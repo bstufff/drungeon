@@ -12,7 +12,7 @@ public enum SpellType
 
 public class SpellFactory : MonoBehaviour
 {
-    [SerializeField] private GameObject[] spellPrefabs;
+    [SerializeField] private GameObject[] _spellPrefabs;
 
     // Place un sort dans le niveau
     public GameObject CreateSpell(SpellType spellType, Vector3 position, Transform parent)
@@ -33,12 +33,12 @@ public class SpellFactory : MonoBehaviour
     {
         return spellType switch
         {
-            SpellType.FlameArea => spellPrefabs[0],
-            SpellType.Meteor => spellPrefabs[1],
-            SpellType.IceWall => spellPrefabs[2],
-            SpellType.Blizzard => spellPrefabs[3],
-            SpellType.ElectricCanon => spellPrefabs[4],
-            SpellType.ElectricMinion => spellPrefabs[5],
+            SpellType.FlameArea => _spellPrefabs[0],
+            SpellType.Meteor => _spellPrefabs[1],
+            SpellType.IceWall => _spellPrefabs[2],
+            SpellType.Blizzard => _spellPrefabs[3],
+            SpellType.ElectricCanon => _spellPrefabs[4],
+            SpellType.ElectricMinion => _spellPrefabs[5],
             _ => throw new System.ArgumentException("Invalid spell type!")
         };
     }

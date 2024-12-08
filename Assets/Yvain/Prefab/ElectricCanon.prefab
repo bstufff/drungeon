@@ -102,10 +102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3d5d109966da44095aeb75629e9728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 10
+  _rotationSpeed: 90
   _cannonballPrefab: {fileID: 5197607568494405362, guid: f6d57017ac53fa24ca0e350074facae3, type: 3}
   _firePoint: {fileID: 3375562947162503538}
-  _fireInterval: 2
+  _fireInterval: 0.5
   _cannonballForce: 500
   _destroyTimer: 10
 --- !u!61 &1003875711025437241

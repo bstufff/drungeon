@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 377941755694a844384d044db844c7ed, type: 3}
   m_Name: Golem
   m_EditorClassIdentifier: 
-  scale: 1
-  speed: 0.25
-  maxHealth: 300
-  sprite: {fileID: 21300000, guid: c58a95daf72d3a44ab46a64c5b8a0376, type: 3}
-  colliderBounds: {x: 1, y: 1}
+  Scale: 1
+  Speed: 0.25
+  MaxHealth: 250
+  Sprite: {fileID: 21300000, guid: c58a95daf72d3a44ab46a64c5b8a0376, type: 3}
+  ColliderBounds: {x: 1, y: 1}

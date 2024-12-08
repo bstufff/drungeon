@@ -15,12 +15,12 @@ public abstract class EnemyStatus : MonoBehaviour
 // État causé par la zone de feu (FlameArea)
 public class BurningStatus : EnemyStatus
 {
-    float damage = 10f;
-    float delay = 1f;
+    float _damage = 10f;
+    float _delay = 1f;
     private void OnEnable()
     {
         isActive = true;
-        StartCoroutine(Effect(delay, damage));
+        StartCoroutine(Effect(_delay, _damage));
     }
     public override IEnumerator Effect(float delay, float value)
     {
@@ -35,12 +35,12 @@ public class BurningStatus : EnemyStatus
 // État causé par le blizzard
 public class FreezingStatus : EnemyStatus
 {
-    float damage = 5f;
-    float delay = 1f;
+    float _damage = 5f;
+    float _delay = 1f;
     private void OnEnable()
     {
         isActive = true;
-        StartCoroutine(Effect(delay, damage));
+        StartCoroutine(Effect(_delay, _damage));
     }
     public override IEnumerator Effect(float delay, float value)
     {

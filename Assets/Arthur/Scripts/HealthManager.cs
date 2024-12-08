@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField] private Image healthBar;
-    public float currentHealth;
+    public float CurrentHealth;
 
+    [SerializeField] private Image _healthBar;
     private float _maxHealth;
     private LevelManager _levelManager;
     private EnemySpawner _enemySpawner;
@@ -25,7 +25,7 @@ public class HealthManager : MonoBehaviour
             // MaxHealth change uniquement si un ennemi est "transformé" en un autre,
             // alors on en profite pour remettre en place les autres variables
             _maxHealth = value;
-            currentHealth = value;
+            CurrentHealth = value;
             RefreshHealthBar();
         }
     }
@@ -33,21 +33,21 @@ public class HealthManager : MonoBehaviour
     public void RefreshHealthBar()
     {
         // Fonction générale pour afficher et rafraichir la barre de vie
-        if (healthBar == null)
+        if (_healthBar == null)
         {
-            healthBar = transform.Find("HealthBar").Find("Health").GetComponent<Image>();
+            _healthBar = transform.Find("HealthBar").Find("Health").GetComponent<Image>();
         }
-        currentHealth = Mathf.Clamp(currentHealth, 0, MaxHealth);
-        healthBar.fillAmount = currentHealth / MaxHealth;
+        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
+        _healthBar.fillAmount = CurrentHealth / MaxHealth;
     }
 
     public void TakeDamage(float damage)
     {
         // Applique les dégats à l'ennemi
-        currentHealth -= damage;
+        CurrentHealth -= damage;
         RefreshHealthBar();
 
-        if (currentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             // Déclenche la séquence de victoire si cet ennemi est le dernier du niveau
             if (_enemySpawner.EnemiesRemaining == 1) 
@@ -67,7 +67,7 @@ public class HealthManager : MonoBehaviour
     // Non utilisé dans le jeu, mais bon à avoir au cas où
     public void Heal(float healingAmount)
     {
-        currentHealth += healingAmount;
+        CurrentHealth += healingAmount;
         RefreshHealthBar();
     }
     

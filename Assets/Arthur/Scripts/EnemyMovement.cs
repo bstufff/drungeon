@@ -10,33 +10,33 @@ public class EnemyMovement : MonoBehaviour
     
     private float _baseSpeed;
     private float _currentSpeed;
-    private int targetIndex = 0; // Progression de l'ennemi
-    private LevelManager levelManager;
+    private int _targetIndex = 0; // Progression de l'ennemi
+    private LevelManager _levelManager;
 
     private void Awake()
     {
         // Initialisation
-        levelManager = FindAnyObjectByType<LevelManager>();
+        _levelManager = FindAnyObjectByType<LevelManager>();
     }
     void Update()
     {
         // Déplace l'ennemi uniquement si le jeu est actif 
-        if (levelManager.IsIngame)
+        if (_levelManager.IsIngame)
         {
             // Quand un point du chemin est atteint, passe au prochain
-            if (transform.position == path[targetIndex].position)
+            if (transform.position == path[_targetIndex].position)
             {
-                targetIndex++;
-                if (targetIndex >= path.Count)
+                _targetIndex++;
+                if (_targetIndex >= path.Count)
                 {
                     // Si l'ennemi est à la fin de son chemin, déclenche la fin de la partie
-                    levelManager.Lose(); 
+                    _levelManager.Lose(); 
                 }
             }
             else
             {
                 // Déplacement
-                transform.position = Vector3.MoveTowards(transform.position, path[targetIndex].position, CurrentSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, path[_targetIndex].position, CurrentSpeed * Time.deltaTime);
             }
         }
 
@@ -63,7 +63,7 @@ public class EnemyMovement : MonoBehaviour
     public void Initialize(List<Transform> path)
     {
         this.path = path;
-        targetIndex = 0;
+        _targetIndex = 0;
         transform.position = path[0].position; // Téléporte au début du chemin
     }
 
