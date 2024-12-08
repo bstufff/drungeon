@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour //, IPrototype<Enemy>
+public class Enemy : MonoBehaviour 
 {   
     // Éléments d'un ennemi qui doivent être mis en place
     public EnemyMovement EnemyMovement;
@@ -10,6 +10,10 @@ public class Enemy : MonoBehaviour //, IPrototype<Enemy>
 
     public void Initialize(EnemyType type)
     {
+        foreach (Component component in GetComponents<EnemyStatus>())
+        {
+            Destroy(component);
+        }
         // Permet à n'importe quel ennemi de devenir n'importe quel autre ennemi 
         transform.localScale = new Vector3(type.Scale, type.Scale, type.Scale);
         EnemyMovement.BaseSpeed = type.Speed;

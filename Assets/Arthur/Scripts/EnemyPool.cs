@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class EnemyPool  
 {
@@ -20,9 +21,10 @@ public class EnemyPool
         Enemy newEnemy;
         if (_availableEnemies.Count > 0)
         {
+            Debug.Log(_availableEnemies.Count);
             // Réutilise un ennemi de la pool
             newEnemy = _availableEnemies[0];
-            _availableEnemies.RemoveAt(0);
+            _availableEnemies.Remove(_availableEnemies[0]);
             newEnemy.gameObject.SetActive(true);
         }
         else
@@ -36,6 +38,12 @@ public class EnemyPool
     // Ajoute un ennemi à la pool
     public void ReturnEnemy(Enemy enemy)
     {
+        if (_availableEnemies.Contains(enemy))
+        {
+            Debug.Log("already in pool!");
+            return;
+        } 
+        Debug.Log(enemy.name + " was returned !");
         enemy.gameObject.SetActive(false);
         _availableEnemies.Add(enemy);
     }

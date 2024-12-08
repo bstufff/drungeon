@@ -52,6 +52,7 @@ public class HealthManager : MonoBehaviour
             // Déclenche la séquence de victoire si cet ennemi est le dernier du niveau
             if (_enemySpawner.EnemiesRemaining == 1) 
             {
+                _enemySpawner.EnemiesRemaining--;
                 Debug.Log("youpla");
                 _levelManager.Win(); 
             }
@@ -62,6 +63,7 @@ public class HealthManager : MonoBehaviour
 
             // Ajoute l'ennemi mort à la pool
             _enemySpawner.EnemyPool.ReturnEnemy(GetComponent<Enemy>());
+            Debug.Log("recycling!");
         }
     }
     // Non utilisé dans le jeu, mais bon à avoir au cas où

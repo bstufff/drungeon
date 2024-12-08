@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public Enemy DefaultEnemy; // Liste des prototypes d'ennemis
     public Transform EnemyParentObject;                    // Parent des ennemis dans la hiérarchie
-    public int EnemiesRemaining = 0;
+    private int enemiesRemaining = 0;
     public EnemyPool EnemyPool;
 
     private int _pathEnumerator = 0; // Pour alterner entre les chemins possibles
@@ -22,11 +22,21 @@ public class EnemySpawner : MonoBehaviour
         EnemyPool = new EnemyPool(DefaultEnemy);
     }
 
+    public int EnemiesRemaining
+    {
+        get { return enemiesRemaining; }
+        set { 
+                enemiesRemaining = value;
+                if (value == 0 && _levelManager.IsIngame)
+                    _levelManager.Win();
+            }
+    }
+
     // Démarre la séquence de spawn avec un délai initial
     public IEnumerator Spawn(Level level, float gracePeriod)
     {
         // Rénitialisation des variables
-        EnemiesRemaining = 0;
+        enemiesRemaining = 0;
         _pathEnumerator = 0;
         _currentLevel = level;
 
@@ -46,7 +56,12 @@ public class EnemySpawner : MonoBehaviour
         StopAllCoroutines(); // Désactive tous les processus d'apparition d'ennemis
         foreach (Transform child in EnemyParentObject)
         {
-            EnemyPool.ReturnEnemy(child.GetComponent<Enemy>());
+            if (child.CompareTag("Enemy"))
+            {
+                Debug.Log("recycling truck !");
+                EnemyPool.ReturnEnemy(child.GetComponent<Enemy>());
+            }
+
         }
     }
 

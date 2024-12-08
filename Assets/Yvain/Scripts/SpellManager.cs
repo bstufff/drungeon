@@ -44,6 +44,8 @@ public class SpellManager : MonoBehaviour
             if (_manager.CurrentMana < manaCost) 
             {
                 Debug.Log("Not enough mana !");
+                Destroy(activeSpell);
+                activeSpell = null;
                 return; 
             }
 
