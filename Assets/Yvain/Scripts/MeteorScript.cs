@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class MeteorScript : Spell
 {
@@ -19,13 +20,15 @@ public class MeteorScript : Spell
     {
         // Applique des dommages au premier ennemi qui touche le sort
         if (other.gameObject.CompareTag("Enemy") && gameObject.activeSelf)
-            StartCoroutine(DealDamage(other.gameObject.GetComponent<HealthManager>()));
+            StartCoroutine(DealDamage(other.gameObject));
     }
-    IEnumerator DealDamage(HealthManager target)
+    private IEnumerator DealDamage(GameObject target)
     {
-        // Désactive 
-        target.TakeDamage(_dmg);
-        yield return new WaitForSeconds(_delay);
-        gameObject.SetActive(false); // Désactive le sort qui sera ensuite détruit
+        // Effectue des dégâts
+        target.TryGetComponent(out HealthManager health);
+        health.TakeDamage(_dmg);
+
+        yield return new WaitForSeconds(_delay); // Applique un délai
+        gameObject.SetActive(false); // Se désactive après utilisation
     }
 }

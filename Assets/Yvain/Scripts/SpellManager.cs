@@ -98,24 +98,5 @@ public class SpellManager : MonoBehaviour
             }
         }
     }
-    public GameObject[] GetSpellSelection()
-    {
-        // Utilise une liste temporaire pour stocker les boutons
-        List<GameObject> interactableButtons = new List<GameObject>();
-
-        foreach (GameObject obj in _spellButtons)
-        {
-            // Vérifie que l'objet est un bouton
-            Button button = obj.GetComponent<Button>();
-            if (button != null &! button.interactable)
-            {
-                // Ajoute à la liste les boutons avec qui on peut interagir
-                interactableButtons.Add(obj);
-            }
-        }
-
-        // Retourne la liste convertie en tableau
-        return interactableButtons.ToArray();
-    }
 
 }
